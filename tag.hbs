@@ -1,0 +1,23 @@
+{{!< default}}
+
+<div id="header" class="header{{#if tag.feature_image}} has-cover{{/if}}">
+	<div class="inner">
+		<span class="header-title">
+			<h1 class="header-name">{{tag.name}}</h1>
+			{{#if tag.description}}
+				<span class="header-description">{{tag.description}}</span>
+			{{/if}}
+			<span class="header-meta">
+				<span class="header-posts">{{plural pagination.total empty='posts' singular='% post' plural='% posts'}}</span>
+			</span>
+		</span>
+	</div>
+	{{#if tag.feature_image}}
+		<div class="header-cover" style="background-image: url('{{tag.feature_image}}');"></div>
+	{{/if}}
+</div>
+<div id="posts">
+	<div class="inner">
+		{{> "loop"}}
+	</div>
+</div>
