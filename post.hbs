@@ -63,40 +63,34 @@
 					<div id="disqus_thread"></div>
 				</div>
 
-			</div>
 
-			<div class="post-nav">
 
-				{{#next_post}}
-					<a class="post-nav-item post-nav-next" href="{{url}}" title="{{title}}">
-						<span class="post-nav-post{{#if feature_image}} has-cover{{/if}}">
+				<div class="post-nav">
 
-							{{#if feature_image}}
-								<figure class="post-nav-image" style="background-image: url('{{img_url feature_image}}');"></figure>
-							{{/if}}
+					{{#next_post}}
+						<a class="post-nav-item post-nav-next" href="{{url}}" title="{{title}}">
+							<span class="post-nav-post">
 
-							<h4 class="post-nav-title">{{title}}</h4>
+								<h4 class="post-nav-title">{{title}}</h4>
 
-							<p class="post-nav-excerpt">{{excerpt words="19"}}&hellip;</p>
-						</span>
-					</a>
-				{{/next_post}}
+								<p class="post-nav-excerpt">{{excerpt words="19"}}&hellip;</p>
+							</span>
+						</a>
+					{{/next_post}}
 
-				{{#prev_post}}
-					<a class="post-nav-item post-nav-prev" href="{{url}}" title="{{title}}">
-						<span class="post-nav-post{{#if feature_image}} has-cover{{/if}}">
+					{{#prev_post}}
+						<a class="post-nav-item post-nav-prev" href="{{url}}" title="{{title}}">
+							<span class="post-nav-post">
 
-							{{#if feature_image}}
-								<figure class="post-nav-image" style="background-image: url('{{img_url feature_image}}');"></figure>
-							{{/if}}
+								<h4 class="post-nav-title">{{title}}</h4>
 
-							<h4 class="post-nav-title">{{title}}</h4>
+								<p class="post-nav-excerpt">{{excerpt words="19"}}&hellip;</p>
 
-							<p class="post-nav-excerpt">{{excerpt words="19"}}&hellip;</p>
+							</span>
+						</a>
+					{{/prev_post}}
 
-						</span>
-					</a>
-				{{/prev_post}}
+				</div>
 
 			</div>
 

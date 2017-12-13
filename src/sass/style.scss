@@ -7,7 +7,7 @@
 
 $breakpoint-phone:		480px;
 $breakpoint-tablet:		800px;
-$breakpoint-laptop:		1280px;
+$breakpoint-laptop:		1200px;
 $breakpoint-desktop:	1600px;
 
 $gutter: 40px;
@@ -85,21 +85,26 @@ a {
 	}
 
 	h1 {
-		font-size: 2em;
+		font-size: 2.5em;
 		line-height: 1em;
 	}
 
 	h2 {
+		font-size: 2em;
+		line-height: 1em;
+	}
+
+	h3 {
 		font-size: 1.75em;
 		line-height: 1.143em;
 	}
 
-	h3 {
+	h4 {
 		font-size: 1.5em;
 		line-height: 1.334em;
 	}
 
-	h4 {
+	h5 {
 		font-size: 1.25em;
 		line-height: 1.2em;
 	}
@@ -108,11 +113,18 @@ a {
 		margin: $gutter 0;
 	}
 
+	p + p {
+		margin-top: -$gutter/2;
+	}
+
 	ul {
 		list-style: none;
 	}
 	li {
 		position: relative;
+	}
+	li * {
+		margin: $gutter/4 0;
 	}
 	ul > li:before,
 	ol > li:before {
@@ -341,9 +353,19 @@ body {
 }
 
 .inner {
-	max-width: 48em;
+	max-width: 44em;
 	margin: 0 auto;
 	padding: 0 $gutter;
+
+	@media only screen and (max-width: $breakpoint-laptop) {
+		max-width: none;
+		padding: 0 $gutter*6;
+	}
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		max-width: 640px;
+		padding: 0 $gutter;
+	}
 }
 
 #wrapper {
@@ -638,6 +660,10 @@ body {
 			color: #fff;
 
 			padding: $gutter*3 0 $gutter*5;
+
+			@media only screen and (max-width: $breakpoint-tablet) {
+				padding: 15% 0 25%;
+			}
 		}
 
 		.inner {
@@ -646,6 +672,7 @@ body {
 		}
 
 		.post-title {
+			position: relative;
 			font-weight: 800;
 			font-size: 8vw;
 			line-height: 1em;
@@ -654,6 +681,21 @@ body {
 			a {
 				color: inherit;
 				text-decoration: none;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				margin-bottom: -$gutter/2;
+				width: $gutter*2;
+				height: 0;
+				border-bottom: 4px solid #fff;
+
+				@media only screen and (max-width: $breakpoint-tablet) {
+
+				}
 			}
 		}
 
@@ -744,6 +786,10 @@ body {
 				border: $gutter solid #fff;
 				box-sizing: border-box;
 				z-index: 10;
+
+				@media only screen and (max-width: $breakpoint-tablet) {
+					border-width: $gutter/2;
+				}
 			}
 
 			&:after {
@@ -784,7 +830,7 @@ body {
 
 			&:before {
 				font-family: "icons";
-				content: '\e800';
+				content: '\e808';
 				position: absolute;
 				left: auto;
 				top: auto;
@@ -896,6 +942,18 @@ body {
 
 .post-nav {
 
+	@media only screen and (max-width: $breakpoint-tablet) {
+		margin-top: $gutter;
+		margin-bottom: $gutter;
+		margin-left: -$gutter/4;
+		margin-right: -$gutter/4;
+		display: flex;
+
+		@media only screen and (max-width: $breakpoint-phone) {
+			display: block;
+		}
+	}
+
 	&:after {
 		clear: both;
 		content: '';
@@ -913,6 +971,27 @@ body {
 		box-sizing: border-box;
 		transform-origin: 50% 0;
 
+		@media only screen and (max-width: $breakpoint-desktop) {
+			padding: $gutter/2 0;
+		}
+
+		@media only screen and (max-width: $breakpoint-tablet) {
+			position: relative;
+			top: auto;
+			left: auto !important;
+			right: auto !important;
+			transform: none !important;
+			border: 0;
+			display: flex;
+			padding: $gutter/4;
+			text-align: left;
+		}
+
+		@media only screen and (max-width: $breakpoint-phone) {
+			width: auto !important;
+			float: none !important;
+		}
+
 		&:before {
 			content: '';
 			position: absolute;
@@ -923,6 +1002,10 @@ body {
 			border-right: $gutter/2 solid transparent;
 			border-bottom: $gutter/4 solid rgba(200,200,200,0.2);
 			transition: all ease-out 0.1s;
+
+			@media only screen and (max-width: $breakpoint-tablet) {
+				display: none;
+			}
 		}
 
 		&:hover {
@@ -943,27 +1026,37 @@ body {
 		}
 
 		.post-nav-post {
+			position: relative;
+			display: block;
+			overflow: hidden;
 
-			&.has-cover {}
-
-			.post-nav-image {
-				display: none;
-				width: 100%;
-				height: 0;
-				padding-bottom: 100%;
-				margin: 0;
-				background: no-repeat scroll center center / cover;
+			@media only screen and (max-width: $breakpoint-tablet) {
+				background: #eee;
+				padding: $gutter/2;
 			}
 
 			.post-nav-title {
 				font-size: 3em;
 				line-height: 1em;
 				margin: 0 0 $gutter/4;
+
+				@media only screen and (max-width: $breakpoint-laptop) {
+					font-size: 2em;
+				}
+
+				@media only screen and (max-width: $breakpoint-tablet) {
+					font-size: 1.5em;
+					margin-bottom: $gutter/2;
+				}
 			}
 
 			.post-nav-excerpt {
 				margin: $gutter/4 0 0;
 				display: none;
+
+				@media only screen and (max-width: $breakpoint-tablet) {
+					display: block;
+				}
 			}
 		}
 	}

@@ -144,29 +144,39 @@ a {
     font-weight: inherit; }
 
 .post-content h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 1em; }
 
 .post-content h2 {
+  font-size: 2em;
+  line-height: 1em; }
+
+.post-content h3 {
   font-size: 1.75em;
   line-height: 1.143em; }
 
-.post-content h3 {
+.post-content h4 {
   font-size: 1.5em;
   line-height: 1.334em; }
 
-.post-content h4 {
+.post-content h5 {
   font-size: 1.25em;
   line-height: 1.2em; }
 
 .post-content p {
   margin: 40px 0; }
 
+.post-content p + p {
+  margin-top: -20px; }
+
 .post-content ul {
   list-style: none; }
 
 .post-content li {
   position: relative; }
+
+.post-content li * {
+  margin: 10px 0; }
 
 .post-content ul > li:before,
 .post-content ol > li:before {
@@ -353,9 +363,17 @@ a {
    layout
    ========================================================================== */
 .inner {
-  max-width: 48em;
+  max-width: 44em;
   margin: 0 auto;
   padding: 0 40px; }
+  @media only screen and (max-width: 1200px) {
+    .inner {
+      max-width: none;
+      padding: 0 240px; } }
+  @media only screen and (max-width: 800px) {
+    .inner {
+      max-width: 640px;
+      padding: 0 40px; } }
 
 #wrapper {
   position: relative;
@@ -538,10 +556,14 @@ a {
     .post .post-header.has-cover {
       color: #fff;
       padding: 120px 0 200px; }
+      @media only screen and (max-width: 800px) {
+        .post .post-header.has-cover {
+          padding: 15% 0 25%; } }
     .post .post-header .inner {
       position: relative;
       z-index: 2; }
     .post .post-header .post-title {
+      position: relative;
       font-weight: 800;
       font-size: 8vw;
       line-height: 1em;
@@ -549,6 +571,15 @@ a {
       .post .post-header .post-title a {
         color: inherit;
         text-decoration: none; }
+      .post .post-header .post-title:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-bottom: -20px;
+        width: 80px;
+        height: 0;
+        border-bottom: 4px solid #fff; }
     .post .post-header .post-meta > span {
       display: inline-block;
       margin-right: 20px;
@@ -608,6 +639,9 @@ a {
         border: 40px solid #fff;
         box-sizing: border-box;
         z-index: 10; }
+        @media only screen and (max-width: 800px) {
+          .post .post-header .post-cover:before {
+            border-width: 20px; } }
       .post .post-header .post-cover:after {
         position: absolute;
         width: 100%;
@@ -633,7 +667,7 @@ a {
       display: table; }
     .post-list .post.post.featured:before {
       font-family: "icons";
-      content: '\e800';
+      content: '\e808';
       position: absolute;
       left: auto;
       top: auto;
@@ -688,6 +722,18 @@ a {
 /* ==========================================================================
    Post Nav
    ========================================================================== */
+@media only screen and (max-width: 800px) {
+  .post-nav {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: -10px;
+    margin-right: -10px;
+    display: -ms-flexbox;
+    display: flex; } }
+  @media only screen and (max-width: 800px) and (max-width: 480px) {
+    .post-nav {
+      display: block; } }
+
 .post-nav:after {
   clear: both;
   content: '';
@@ -703,6 +749,25 @@ a {
   text-align: center;
   box-sizing: border-box;
   transform-origin: 50% 0; }
+  @media only screen and (max-width: 1600px) {
+    .post-nav .post-nav-item {
+      padding: 20px 0; } }
+  @media only screen and (max-width: 800px) {
+    .post-nav .post-nav-item {
+      position: relative;
+      top: auto;
+      left: auto !important;
+      right: auto !important;
+      transform: none !important;
+      border: 0;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 10px;
+      text-align: left; } }
+  @media only screen and (max-width: 480px) {
+    .post-nav .post-nav-item {
+      width: auto !important;
+      float: none !important; } }
   .post-nav .post-nav-item:before {
     content: '';
     position: absolute;
@@ -713,6 +778,9 @@ a {
     border-right: 20px solid transparent;
     border-bottom: 10px solid rgba(200, 200, 200, 0.2);
     transition: all ease-out 0.1s; }
+    @media only screen and (max-width: 800px) {
+      .post-nav .post-nav-item:before {
+        display: none; } }
   .post-nav .post-nav-item:hover:before {
     border-bottom-color: #000; }
   .post-nav .post-nav-item.post-nav-next {
@@ -721,20 +789,31 @@ a {
   .post-nav .post-nav-item.post-nav-prev {
     right: -140px;
     transform: rotate(90deg); }
-  .post-nav .post-nav-item .post-nav-post .post-nav-image {
-    display: none;
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    margin: 0;
-    background: no-repeat scroll center center / cover; }
-  .post-nav .post-nav-item .post-nav-post .post-nav-title {
-    font-size: 3em;
-    line-height: 1em;
-    margin: 0 0 10px; }
-  .post-nav .post-nav-item .post-nav-post .post-nav-excerpt {
-    margin: 10px 0 0;
-    display: none; }
+  .post-nav .post-nav-item .post-nav-post {
+    position: relative;
+    display: block;
+    overflow: hidden; }
+    @media only screen and (max-width: 800px) {
+      .post-nav .post-nav-item .post-nav-post {
+        background: #eee;
+        padding: 20px; } }
+    .post-nav .post-nav-item .post-nav-post .post-nav-title {
+      font-size: 3em;
+      line-height: 1em;
+      margin: 0 0 10px; }
+      @media only screen and (max-width: 1200px) {
+        .post-nav .post-nav-item .post-nav-post .post-nav-title {
+          font-size: 2em; } }
+      @media only screen and (max-width: 800px) {
+        .post-nav .post-nav-item .post-nav-post .post-nav-title {
+          font-size: 1.5em;
+          margin-bottom: 20px; } }
+    .post-nav .post-nav-item .post-nav-post .post-nav-excerpt {
+      margin: 10px 0 0;
+      display: none; }
+      @media only screen and (max-width: 800px) {
+        .post-nav .post-nav-item .post-nav-post .post-nav-excerpt {
+          display: block; } }
 
 /* ==========================================================================
    Pagination
