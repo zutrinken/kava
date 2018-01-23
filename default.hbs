@@ -16,9 +16,7 @@
 </head>
 
 <body class="{{body_class}}">
-
 	<div id="wrapper">
-
 			<nav id="nav" class="nav">
 				<div class="inner">
 					{{navigation}}
@@ -29,9 +27,9 @@
 					<div class="post-list" role="main" id="results"></div>
 				</div>
 			</aside>
-
-			{{{body}}}
-
+			<main id="content" class="content" role="main">
+				{{{body}}}
+			</main>
 			<footer id="footer">
 				<div class="inner">
 					<div class="credits">
@@ -40,7 +38,6 @@
 					</div>
 				</div>
 			</footer>
-
 	</div>
 
 	{{ghost_foot}}
