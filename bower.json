@@ -1,9 +1,14 @@
 {
   "name": "zero",
   "devDependencies": {
-    "fitvids": "~1.2.0",
-    "highlightjs": "~9.10.0",
-    "jquery": "~3.2.1",
-    "normalize.css": "~7.0.0"
+    "fitvids": "^1.2.0",
+    "highlightjs": "^9.12.0",
+    "jquery": "^3.3.1",
+    "normalize.css": "~7.0.0",
+    "normalize-css": "normalize.css#^7.0.0"
+  },
+  "resolutions": {
+    "highlightjs": "^9.12.0",
+    "jquery": "^3.3.1"
   }
 }
