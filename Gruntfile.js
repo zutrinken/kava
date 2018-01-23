@@ -15,7 +15,6 @@ module.exports = function(grunt) {
   				'bower_components/jquery/dist/jquery.min.js',
   				'bower_components/fitvids/jquery.fitvids.js',
   				'bower_components/highlightjs/highlight.pack.min.js',
-  				'bower_components/reading-time/build/readingTime.min.js',
           'node_modules/ghosthunter/dist/jquery.ghosthunter.js'
   			],
   			'cssDependencies': [
