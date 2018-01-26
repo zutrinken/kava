@@ -343,6 +343,40 @@ a {
 	}
 }
 
+.avatar {
+	position: relative;
+	overflow: hidden;
+	background: #ddd;
+	margin: 0;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		width: 50%;
+		height: 50%;
+		bottom: 35%;
+		left: 25%;
+		border-radius: 100%;
+		background: #aaa;
+	}
+
+	&:after {
+		width: 100%;
+		bottom: -25%;
+		left: 0;
+	}
+
+	img {
+		position: relative;
+		z-index: 2;
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
 
 /* ==========================================================================
    layout
@@ -497,8 +531,8 @@ body {
 	}
 
 	&.avatar {
-		border-radius: 4px;
-		overflow: hidden;
+		border-radius: $gutter;
+		height: $gutter;
 	}
 }
 
@@ -728,14 +762,13 @@ body {
 				position: relative;
 				padding-left: 1.5em;
 
-				img {
+				.avatar {
 					position: absolute;
 					left: 0;
 					top: 50%;
-					width: 1.2em;
-					height: 1.2em;
-					margin-top: -0.6em;
-					margin-left: -0.1em;
+					width: $gutter/2;
+					height: $gutter/2;
+					margin-top: -$gutter/4;
 					border-radius: 2em;
 				}
 			}

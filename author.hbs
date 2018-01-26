@@ -4,11 +4,11 @@
 <div id="header" class="header{{#if cover_image}} has-cover{{/if}}">
 	<div class="inner">
 		<span class="header-title">
-			{{#if profile_image}}
-				<figure class="header-logo avatar">
-					<img src="{{img_url profile_image}}" alt="{{name}}" />
-				</figure>
-			{{/if}}
+			<figure class="header-logo avatar">
+				{{#if profile_image}}
+				<img src="{{img_url profile_image}}" alt="{{name}}" />
+				{{/if}}
+			</figure>
 			<h1 class="header-name">{{name}}</h1>
 			{{#if bio}}
 				<span class="header-description">{{bio}}</span>
