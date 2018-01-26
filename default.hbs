@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html lang="{{lang}}">
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-	<title>{{meta_title}}</title>
-
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<link rel="stylesheet" type="text/css" href="{{asset "css/dependencies.css"}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
-
-	{{ghost_head}}
-</head>
-
-<body class="{{body_class}}">
-
-	<div id="wrapper">
-
-			<nav id="nav" class="nav">
-				<div class="inner">
-					{{navigation}}
-				</div>
-			</nav>
-			<aside id="searchresults" class="searchresults">
-				<div class="inner">
-					<div class="post-list" role="main" id="results"></div>
-				</div>
-			</aside>
-
-			{{{body}}}
-
-			<footer id="footer">
-				<div class="inner">
-					<div class="credits">
-						<span class="credits-theme">{{{t "Theme {themelink} by {creatorlink}" themelink="<a href=\"https://github.com/zutrinken/kava\" target=\"_blank\" rel=\"nofollow\">kava</a>" creatorlink="<a href=\"https://zutrinken.com\" target=\"_blank\" rel=\"nofollow\">zutrinken</a>"}}}</span>
-						<span class="credits-software">{{{t "Published with {ghostlink}" ghostlink="<a href=\"https://ghost.org\" target=\"_blank\" rel=\"nofollow\">Ghost</a>"}}}</span>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>{{meta_title}}</title>
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="{{asset "css/dependencies.css"}}" />
+		<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+		{{ghost_head}}
+	</head>
+	<body class="{{body_class}}">
+		<div id="wrapper">
+				<nav id="nav" class="nav">
+					<div class="inner">
+						{{navigation}}
 					</div>
-				</div>
-			</footer>
-
-	</div>
-
-	{{ghost_foot}}
-
-	<script type="text/javascript" src="{{asset "js/dependencies.js"}}"></script>
-	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
-</body>
+				</nav>
+				<aside id="searchresults" class="searchresults">
+					<div class="inner">
+						<div class="post-list" role="main" id="results"></div>
+					</div>
+				</aside>
+				<main id="main" class="content" role="main">
+				{{{body}}}
+				</main>
+				<footer id="footer">
+					<div class="inner">
+						<div class="credits">
+							<span class="credits-theme">{{{t "Theme {themelink} by {creatorlink}" themelink="<a href=\"https://github.com/zutrinken/kava\" target=\"_blank\" rel=\"nofollow\">kava</a>" creatorlink="<a href=\"http://zutrinken.com\" target=\"_blank\" rel=\"nofollow\">zutrinken</a>"}}}</span>
+							<span class="credits-software">{{{t "Published with {ghostlink}" ghostlink="<a href=\"https://ghost.org\" target=\"_blank\" rel=\"nofollow\">Ghost</a>"}}}</span>
+						</div>
+					</div>
+				</footer>
+		</div>
+		{{ghost_foot}}
+		<script type="text/javascript" src="{{asset "js/dependencies.js"}}"></script>
+		<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
+	</body>
 </html>
