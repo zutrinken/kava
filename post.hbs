@@ -18,7 +18,7 @@
 
 						<span class="post-date">{{date format="DD MMM YYYY"}} </span>
 
-						<span class="post-reading-time">{{reading_time}}</span>
+						<span class="post-reading-time">{{reading_time seconds=(t "under 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
 
 						<span class="post-tags">{{tags separator=", "}}</span>
 

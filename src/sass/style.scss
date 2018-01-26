@@ -515,13 +515,20 @@ body {
 	display: block;
 	z-index: 2;
 	padding: $gutter 0;
-	text-align: center;
 	border-bottom: 1px solid #eee;
 }
 
+.author-template .header-title {
+	padding-left: $gutter*3.5;
+}
+
 .header-logo {
-	width: $gutter;
-	margin: 0 auto $gutter/4;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -$gutter*1.5;
+	margin-left: $gutter/2;
+	width: $gutter*2.5;
 	padding: 0;
 
 	img {
@@ -531,13 +538,14 @@ body {
 	}
 
 	&.avatar {
-		border-radius: $gutter;
-		height: $gutter;
+		border-radius: $gutter*4;
+		height: $gutter*2.5;
 	}
 }
 
 .header-name {
-	font-size: 1.5em;
+	font-weight: 800;
+	font-size: 4vw;
 	line-height: 1em;
 	margin: 0;
 }
