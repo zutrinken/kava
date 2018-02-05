@@ -18,7 +18,7 @@ module.exports = function(grunt) {
           'node_modules/ghosthunter/dist/jquery.ghosthunter.js'
   			],
   			'cssDependencies': [
-  				'bower_components/normalize.css/normalize.css',
+  				'bower_components/normalize-css/normalize.css',
   				'bower_components/highlightjs/styles/default.css'
   			]
       },

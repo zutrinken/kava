@@ -4,7 +4,7 @@ jQuery(function($) {
 	   ghostHunter
 	   ========================================================================== */
 
-	var searchField = $("#search-field").ghostHunter({
+	$("#search-field").ghostHunter({
 		results: "#results",
 		result_template: "<article class='post'><h2 class='post-title'><a href='{{link}}'>{{title}}</a></h2><span class='post-meta'>On <span class='post-date'>{{pubDate}}</span></span></article>",
 		info_template: "<div class='header-title'><h1 class='header-name'>Searchresults</h1><span class='header-meta'>{{amount}} Posts found</span></div>",
