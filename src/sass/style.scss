@@ -12,6 +12,13 @@ $breakpoint-desktop:	1600px;
 
 $gutter: 40px;
 
+$color-gray-90: #eee;
+$color-gray-80: #ddd;
+$color-gray-70: #ccc;
+$color-gray-50: #666;
+
+$color-primary: #2255EE;
+
 
 /* ==========================================================================
    Basics
@@ -25,7 +32,7 @@ body {
 }
 
 a {
-	color: #2255EE;
+	color: $color-primary;
 	text-decoration: none;
 
 	&:hover,
@@ -43,7 +50,7 @@ a {
 .post-content {
 
 	a {
-		color: #2255EE;
+		color: $color-primary;
 		text-decoration: underline;
 		font-weight: 400;
 		transition: all ease-out 0.2s;
@@ -134,6 +141,7 @@ a {
 		font-size: 1em;
 		font-weight: 700;
 		line-height: 1.5em;
+		color: $color-primary;
 	}
 	li li:before {
 		margin-left: -$gutter/2;
@@ -165,6 +173,7 @@ a {
 	}
 
 	dl {
+		padding-left: $gutter;
 		margin: $gutter 0;
 
 		dt {
@@ -172,10 +181,19 @@ a {
 			line-height: 1.143em;
 			font-weight: 700;
 			margin-bottom: $gutter/4;
+
+			&:before {
+				content: '';
+				position: absolute;
+				width: $gutter/2;
+				margin-left: -$gutter;
+				margin-top: 0.5em;
+				border-bottom: 2px solid $color-primary;
+			}
 		}
 
 		dd {
-			margin-left: $gutter;
+			margin-left: 0;
 			margin-bottom: $gutter/2;
 		}
 	}
@@ -185,7 +203,7 @@ a {
 		height: 1px;
 		margin: $gutter 0;
 		padding: 0;
-		background: #000;
+		background: black;
 		border: 0;
 	}
 
@@ -197,7 +215,7 @@ a {
 		font-style: italic;
 		font-weight: 400;
 		background: transparent;
-		border-left: $gutter/4 solid #eee;
+		border-left: $gutter/4 solid $color-gray-90;
 
 		* {
 			margin: $gutter/2 0;
@@ -234,7 +252,7 @@ a {
 		white-space: pre;
 		overflow: auto;
 		box-sizing: border-box;
-		background: #eee;
+		background: $color-gray-90;
 
 		code,
 		tt {
@@ -280,10 +298,11 @@ a {
 			user-select: none;
 			cursor: default;
 
-			background: #eee;
+			background: $color-gray-90;
 
 			.line {
 				display: block;
+				color: $color-gray-70;
 			}
 		}
 	}
@@ -292,20 +311,20 @@ a {
 		display: inline-block;
 		margin: 0 2px 4px;
 		padding: 1px 8px;
-		border: #ccc 1px solid;
-		color: #666;
-		text-shadow: #fff 0 1px 0;
+		border: $color-gray-70 1px solid;
+		color: $color-gray-50;
+		text-shadow: white 0 1px 0;
 		font-size: 0.875em;
 		font-weight: bold;
 		border-radius: 4px;
-		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 white inset;
 	}
 
 	table {
 		width: 100%;
 		max-width: 100%;
 		margin: $gutter 0;
-		background: #eee;
+		background: $color-gray-90;
 	}
 
 	table th,
@@ -347,7 +366,7 @@ a {
 .avatar {
 	position: relative;
 	overflow: hidden;
-	background: #ddd;
+	background: $color-gray-80;
 	margin: 0;
 	display: inline-block;
 
@@ -366,7 +385,7 @@ a {
 		width: 50%;
 		height: 50%;
 		border-radius: 100%;
-		background: #bbb;
+		background: rgba(0,0,0,0.15);
 	}
 
 	&:after {
@@ -480,13 +499,13 @@ body {
 			margin: -4px 0;
 			padding: 0 12px;
 			appeareance: none;
-			background: #eee;
+			background: $color-gray-90;
 			border: 0;
 			border-radius: 8px;
 			outline: 0;
 			box-sizing: border-box;
 			box-shadow: none;
-			color: #666;
+			color: $color-gray-50;
 		}
 
 		input[type="submit"] {
@@ -524,7 +543,7 @@ body {
 	z-index: 2;
 	padding: $gutter 0;
 	text-align: center;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid $color-gray-90;
 }
 
 .header-logo {
@@ -708,7 +727,7 @@ body {
 		padding: $gutter 0;
 
 		&.has-cover {
-			color: #fff;
+			color: white;
 
 			padding: $gutter*3 0 $gutter*5;
 
@@ -742,7 +761,7 @@ body {
 				margin-bottom: -$gutter/2;
 				width: $gutter*2;
 				height: 0;
-				border-bottom: 4px solid #fff;
+				border-bottom: 4px solid white;
 
 				@media only screen and (max-width: $breakpoint-tablet) {
 
@@ -774,10 +793,9 @@ body {
 					position: absolute;
 					left: 0;
 					top: 50%;
-					width: 1.2em;
-					height: 1.2em;
-					margin-top: -0.6em;
-					margin-left: 0.2em;
+					width: 1.5em;
+					height: 1.5em;
+					margin-top: -0.75em;
 					border-radius: 2em;
 				}
 			}
@@ -834,7 +852,7 @@ body {
 				height: 100%;
 				left: 0;
 				top: 0;
-				border: $gutter solid #fff;
+				border: $gutter solid white;
 				box-sizing: border-box;
 				z-index: 10;
 
@@ -869,7 +887,7 @@ body {
 	.post {
 		padding-top: $gutter;
 		padding-bottom: $gutter;
-		border-bottom: 1px solid #eee;
+		border-bottom: 1px solid $color-gray-90;
 
 		&:after {
 			clear: both;
@@ -1062,7 +1080,7 @@ body {
 		&:hover {
 
 			&:before {
-				border-bottom-color: #000;
+				border-bottom-color: black;
 			}
 		}
 
@@ -1082,7 +1100,7 @@ body {
 			overflow: hidden;
 
 			@media only screen and (max-width: $breakpoint-tablet) {
-				background: #eee;
+				background: $color-gray-90;
 				padding: $gutter/2;
 			}
 
