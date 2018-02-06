@@ -1,0 +1,17 @@
+{
+  "No posts" : "No posts",
+  "1 post" : "1 post",
+  "% posts" : "% posts",
+  "Newer posts" : "Newer posts",
+  "Older posts" : "Older posts",
+  "Page {page} of {pages}" : "Page {page} of {pages}",
+  "On" : "On",
+  "by" : "by",
+  "under 1 min read" : "under 1 min read",
+  "1 min read" : "1 min read",
+  "% min read" : "% min read",
+  "Searchresults" : "Searchresults",
+  "posts found" : "posts found",
+  "Theme {themelink} by {creatorlink}" : "Theme {themelink} by {creatorlink}",
+  "Published with {ghostlink}" : "Published with {ghostlink}"
+}

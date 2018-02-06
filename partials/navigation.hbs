@@ -1,40 +1,31 @@
 <div id="menu">
-
 	<ul class="menu-list">
-
 		{{#foreach navigation}}
 			<li class="menu-list-item {{#if current}} current{{/if}}">
 				<a class="{{slug}}" href="{{url absolute="true"}}">{{label}}</a>
 			</li>
 		{{/foreach}}
-
 		{{#if @blog.twitter}}
 			<li class="menu-list-item">
 				<a class="twitter" href="{{twitter_url}}" title="{{@blog.twitter}}"><i class="icon-twitter"></i></a>
 			</li>
 		{{/if}}
-
 		{{#if @blog.facebook}}
 			<li class="menu-list-item">
 				<a class="facebook" href="{{facebook_url}}" title="{{@blog.facebook}}"><i class="icon-facebook"></i></a>
 			</li>
 		{{/if}}
-
 		{{#if @labs.subscribers}}
 			<li class="menu-list-item">
 				<a class="subscribe" href="{{@blog.url}}/subscribe/"><i class="icon-mail"></i></a>
 			</li>
 		{{/if}}
-
 		<li class="menu-list-item">
 			<a class="rss" href="{{@blog.url}}/rss/" title="Feed"><i class="icon-rss"></i></a>
 		</li>
-
 	</ul>
-
 	<form class="menu-search">
 		<input type="text" id="search-field" placeholder="Search ..." />
 		<input type="submit" value="search" />
 	</form>
-
 </div>

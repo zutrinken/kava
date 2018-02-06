@@ -362,7 +362,6 @@ a {
 }
 
 
-
 .avatar {
 	position: relative;
 	overflow: hidden;
@@ -542,13 +541,20 @@ body {
 	display: block;
 	z-index: 2;
 	padding: $gutter 0;
-	text-align: center;
 	border-bottom: 1px solid $color-gray-90;
 }
 
+.author-template .header-title {
+	padding-left: $gutter*3.5;
+}
+
 .header-logo {
-	width: $gutter;
-	margin: 0 auto $gutter/4;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -$gutter*1.25;
+	margin-left: $gutter/2;
+	width: $gutter*2.5;
 	padding: 0;
 
 	img {
@@ -558,13 +564,13 @@ body {
 	}
 
 	&.avatar {
-		height: $gutter;
 		border-radius: 4px;
 	}
 }
 
 .header-name {
-	font-size: 1.5em;
+	font-weight: 800;
+	font-size: 4vw;
 	line-height: 1em;
 	margin: 0;
 }
@@ -793,9 +799,9 @@ body {
 					position: absolute;
 					left: 0;
 					top: 50%;
-					width: 1.5em;
-					height: 1.5em;
-					margin-top: -0.75em;
+					width: $gutter/2;
+					height: $gutter/2;
+					margin-top: -$gutter/4;
 					border-radius: 2em;
 				}
 			}

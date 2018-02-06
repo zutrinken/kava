@@ -1,21 +1,17 @@
 jQuery(function($) {
 
-	/* ==========================================================================
-	   ghostHunter
-	   ========================================================================== */
-
 	$("#search-field").ghostHunter({
 		results: "#results",
-		result_template: "<article class='post'><h2 class='post-title'><a href='{{link}}'>{{title}}</a></h2><span class='post-meta'>On <span class='post-date'>{{pubDate}}</span></span></article>",
-		info_template: "<div class='header-title'><h1 class='header-name'>Searchresults</h1><span class='header-meta'>{{amount}} Posts found</span></div>",
+		result_template: '<article class="post"><h2 class="post-title"><a href="{{link}}">{{title}}</a></h2><span class="post-meta">On <span class="post-date">{{pubDate}}</span></span></article>',
+		info_template: '<div class="header-title"><h1 class="header-name">Searchresults</h1><span class="header-meta">{{amount}} posts found</span></div>',
 		displaySearchInfo : true,
 		onComplete: function(results) {
-      if ($('#search-field').prop('value')) {
+      if ($("#search-field").prop('value')) {
         $('#searchresults').show();
-        $('#content').hide();
+        $('#main').hide();
       } else {
-	      $('#searchresults').hide();
-	      $('#content').show();
+        $('#searchresults').hide();
+        $('#main').show();
       }
     }
 	});
