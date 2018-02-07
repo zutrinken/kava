@@ -1,15 +1,19 @@
 {{!< default}}
 
 {{#post}}
+
+<div id="header" class="header{{#if feature_image}} has-cover{{/if}}">
+	<div class="inner">
+		<span class="header-title">
+			<h1 class="header-name">{{{title}}}</h1>
+		</span>
+	</div>
+	{{#if feature_image}}
+		<div class="header-cover" style="background-image: url('{{feature_image}}');"></div>
+	{{/if}}
+</div>
+
 <article class="{{post_class}}">
-  <header class="post-header{{#if feature_image}} has-cover{{/if}}">
-    <div class="inner">
-      <h1 class="post-title">{{{title}}}</h1>
-    </div>
-    {{#if feature_image}}
-    <div class="post-cover" style="background-image: url('{{img_url feature_image}}');"></div>
-    {{/if}}
-  </header>
   <div class="inner">
     <section class="post-content">
       {{content}}

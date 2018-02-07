@@ -15,10 +15,6 @@
 			{{/if}}
 			<span class="header-meta author-meta">
 				<span class="header-posts">{{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</span>
-
-				{{#if location}}
-					<span class="author-location">{{location}}</span>
-				{{/if}}
 				{{#if website}}
 					<span class="author-website"><a target="_blank" href="{{website}}">Website</a></span>
 				{{/if}}
