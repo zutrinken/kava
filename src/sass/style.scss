@@ -565,20 +565,25 @@ body {
 	display: block;
 	z-index: 2;
 	padding: $gutter 0;
-	border-bottom: 1px solid $color-gray-90;
+	border-bottom: 2px solid $color-gray-80;
 }
 
-.author-template .header-title {
-	padding-left: $gutter*3;
+.header-label {
+	display: block;
+	position: absolute;
+	left: $gutter/2;
+	top: $gutter*0.75;
+	padding: 0 $gutter/4;
+	font-size: 1em;
+	line-height: 1.5em;
+	color: black;
+	background: rgba(255, 245, 0, 0.8);
+	text-transform: uppercase;
+	z-index: -1;
 }
 
 .header-logo {
-	position: absolute;
-	left: 0;
-	top: $gutter*1.25;
-	margin-left: $gutter/2;
-	width: $gutter*2;
-	padding: 0;
+	margin: 0;
 
 	img {
 		display: block;
@@ -587,8 +592,14 @@ body {
 	}
 
 	&.avatar {
-		height: $gutter*2;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 8em;
+		height: 8em;
+		margin-left: -5em;
 		border-radius: 100%;
+		z-index: -2;
 	}
 }
 
@@ -983,16 +994,16 @@ body {
 				font-family: "icon";
 				content: '\e800';
 				position: absolute;
-				left: auto;
-				top: auto;
+				left: 0;
+				top: 0;
+				margin-left: -0.5em;
 				width: 1em;
 				height: 1em;
-				margin-left: -3em;
+				font-size: 12em;
 				line-height: 1em;
-				font-size: 1em;
 				text-align: center;
-				color: inherit;
-				z-index: 2;
+				color: rgba(255, 245, 0, 0.8);
+				z-index: -1;
 			}
 		}
 
@@ -1020,7 +1031,7 @@ body {
 		.post-title {
 			margin-top: 0;
 			font-size: 2em;
-			line-height: 1em;
+			line-height: 1.25em;
 
 			a {
 				color: inherit;
