@@ -1392,37 +1392,32 @@ body {
 
 .pagination {
 	padding: $gutter 0;
+	text-align: center;
 
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
 
 	.pagination-item {
+		display: inline-block;
 
 		&:hover,
 		&:focus {
 
 		}
-
-		i {
-			position: relative;
-		}
 	}
 
 	.pagination-prev {
-		float: right;
-
-		i {
-			right: -0.05em;
-		}
+		float: left;
 	}
 
 	.pagination-next {
-		float: left;
-
-		i {
-			left: -0.05em;
-		}
+		float: right;
 	}
 
 	.pagination-info {
-
+		display: inline-block;
 	}
 }

@@ -1,11 +1,9 @@
 <nav id="pagination" class="pagination" role="pagination">
-	<div class="inner">
-	    {{#if prev}}
-	        <a class="pagination-item pagination-next" href="{{page_url prev}}"><i class="icon-left-open-big"></i> <span>{{t "Newer posts"}}</span></a>
-	    {{/if}}
-	    <span class="pagination-info">{{t "Page {page} of {pages}" page=page pages=pages}}</span>
-	    {{#if next}}
-	        <a class="pagination-item pagination-prev" href="{{page_url next}}"><span>{{t "Older posts"}}</span> <i class="icon-right-open-big"></i></a>
-	    {{/if}}
-	</div>
+    {{#if prev}}
+        <a class="pagination-item pagination-prev" href="{{page_url prev}}"><span>{{t "Newer posts"}}</span></a>
+    {{/if}}
+    <span class="pagination-info">{{t "Page {page} of {pages}" page=page pages=pages}}</span>
+    {{#if next}}
+        <a class="pagination-item pagination-next" href="{{page_url next}}"><span>{{t "Older posts"}}</span></a>
+    {{/if}}
 </nav>
