@@ -431,6 +431,10 @@ body {
 	max-width: 44em;
 	padding: 0 16em;
 
+	@media only screen and (max-width: $breakpoint-desktop) {
+		padding: 0 14em;
+	}
+
 	@media only screen and (max-width: $breakpoint-laptop) {
 		padding: 0 12em;
 	}
@@ -619,10 +623,7 @@ body {
 	display: block;
 	margin-top: $gutter/4;
 
-	.header-posts,
-	.author-website,
-	.author-twitter,
-	.author-facebook {
+	> span {
 		position: relative;
 		display: inline-block;
 		padding-left: 1.6em;
@@ -658,35 +659,6 @@ body {
 	.header-posts:before {
 			content: '\e802';
 	}
-
-	.author-location:before {
-			content: '\e805';
-	}
-
-	.author-website:before {
-			content: '\e801';
-	}
-
-	.author-twitter:before {
-			content: '\f099';
-	}
-
-	.author-facebook:before {
-			content: '\f09a';
-	}
-
-	.author-website,
-	.author-twitter,
-	.author-facebook {
-
-		a {
-			width: 1.5em;
-			margin-left: -1.5em;
-			overflow: hidden;
-			color: transparent;
-		}
-	}
-
 }
 
 .header-cover {
@@ -717,6 +689,40 @@ body {
 		content: '';
 		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
 		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,r gba(0,0,0,0.6) 100%);
+	}
+}
+
+
+
+
+.author-meta {
+
+	.author-location:before {
+			content: '\e805';
+	}
+
+	.author-website:before {
+			content: '\e804';
+	}
+
+	.author-twitter:before {
+			content: '\f099';
+	}
+
+	.author-facebook:before {
+			content: '\f09a';
+	}
+
+	.author-website,
+	.author-twitter,
+	.author-facebook {
+
+		a {
+			width: 1.5em;
+			margin-left: -1.5em;
+			overflow: hidden;
+			color: transparent;
+		}
 	}
 }
 
@@ -768,18 +774,15 @@ body {
 		padding: $gutter 0;
 
 		&.has-cover {
+			color: white;
 			padding: $gutter*3 0 $gutter*5;
 
 			@media only screen and (max-width: $breakpoint-tablet) {
-				padding: 15% 0 25%;
-			}
-
-			@media only screen and (min-width: $breakpoint-phone) {
-				color: white;
+				padding: $gutter*4 0 $gutter*1.5;
 			}
 
 			@media only screen and (max-width: $breakpoint-phone) {
-				padding: $gutter 0;
+				padding: $gutter*3 0 $gutter/2;
 			}
 		}
 
@@ -812,7 +815,11 @@ body {
 				margin-bottom: -$gutter/2;
 				width: $gutter*2;
 				height: 0;
-				border-bottom: 4px solid black;
+				border-bottom: 4px solid $color-gray-80;
+
+				@media only screen and (max-width: $breakpoint-tablet) {
+					width: 100%;
+				}
 			}
 		}
 
@@ -831,16 +838,15 @@ body {
 
 		.post-meta {
 
+			a {
+				color: inherit;
+			}
+
 			> span {
 				display: inline-block;
 				margin-right: $gutter/2;
+				margin-bottom: $gutter/4;
 				line-height: 1.5em;
-
-				@media only screen and (max-width: $breakpoint-phone) {
-					display: block;
-					margin-right: 0;
-					margin-bottom: $gutter/2;
-				}
 
 				&:last-child {
 					margin-right: 0;
@@ -851,10 +857,10 @@ body {
 				}
 			}
 
-			.post-date,
-			.post-tags,
-			.post-author,
-			.post-reading-time {
+			.post-meta-date,
+			.post-meta-tags,
+			.post-meta-author,
+			.post-meta-reading-time {
 				position: relative;
 				padding-left: 1.6em;
 
@@ -883,15 +889,15 @@ body {
 				}
 			}
 
-			.post-date:before {
+			.post-meta-date:before {
 					content: '\e803';
 			}
 
-			.post-tags:before {
+			.post-meta-tags:before {
 					content: '\e808';
 			}
 
-			.post-reading-time:before {
+			.post-meta-reading-time:before {
 					content: '\e806';
 			}
 		}
@@ -899,7 +905,11 @@ body {
 		&.has-cover {
 
 			.post-meta {
+				color: rgba(255,255,255,0.6);
 
+					a {
+						color: white;
+					}
 			}
 		}
 
@@ -911,10 +921,6 @@ body {
 			background: no-repeat scroll center center / cover;
 			z-index: 1;
 
-			@media only screen and (max-width: $breakpoint-phone) {
-				display: none;
-			}
-
 			&:before {
 				content: '';
 				position: absolute;
@@ -925,22 +931,33 @@ body {
 				border: $gutter solid white;
 				box-sizing: border-box;
 				z-index: 10;
+				background: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+				background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
 
 				@media only screen and (max-width: $breakpoint-tablet) {
 					border-width: $gutter/2;
 				}
+
+				@media only screen and (max-width: $breakpoint-phone) {
+					border-width: 0;
+				}
 			}
 
 			&:after {
+				content: '';
 				position: absolute;
 				width: 100%;
-				height: 100%;
+				height: $gutter*4;
 				left: 0;
 				bottom: 0;
 				z-index: 8;
-				content: '';
-				background: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
-				background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+				background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+				background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+				display: none;
+
+				@media only screen and (max-width: $breakpoint-tablet) {
+					display: block;
+				}
 			}
 		}
 	}
@@ -966,20 +983,44 @@ body {
 		padding-bottom: $gutter;
 		box-sizing: border-box;
 
-		@media only screen and (max-width: $breakpoint-phone) {
+		@media only screen and (max-width: $breakpoint-tablet) {
+			width: 100%;
 			border-bottom: 2px solid $color-gray-90;
+		}
+
+		@media only screen and (max-width: $breakpoint-phone) {
+			padding-top: $gutter/2;
+			padding-bottom: $gutter/2;
 		}
 
 		&:nth-child(odd) {
 			float: left;
 			clear: left;
 			padding-right: $gutter;
+
+			@media only screen and (max-width: $breakpoint-laptop) {
+				padding-right: $gutter/2;
+			}
+
+			@media only screen and (max-width: $breakpoint-tablet) {
+				float: none;
+				padding-right: 0;
+			}
 		}
 
 		&:nth-child(even) {
 			float: right;
 			clear: right;
 			padding-left: $gutter;
+
+			@media only screen and (max-width: $breakpoint-laptop) {
+				padding-left: $gutter/2;
+			}
+
+			@media only screen and (max-width: $breakpoint-tablet) {
+				float: none;
+				padding-left: 0;
+			}
 		}
 
 		&:after {
@@ -1014,24 +1055,51 @@ body {
 			padding-bottom: 56.25%;
 			background: no-repeat scroll center center / cover;
 
-
-			@media only screen and (max-width: $breakpoint-phone) {
+			@media only screen and (max-width: $breakpoint-tablet) {
 				float: left;
 				width: $gutter*4;
 				height: $gutter*4;
 				padding: 0;
 				margin-right: $gutter;
 			}
-		}
 
-		.post-meta {
-
+			@media only screen and (max-width: $breakpoint-phone) {
+				width: $gutter*3;
+				height: $gutter*3;
+				margin-right: $gutter/2;
+				margin-bottom: 0;
+			}
 		}
 
 		.post-title {
 			margin-top: 0;
+			margin-bottom: $gutter/4;
 			font-size: 2em;
 			line-height: 1.25em;
+
+			@media only screen and (max-width: $breakpoint-tablet) {
+				font-size: 1.75em;
+			}
+
+			@media only screen and (max-width: $breakpoint-phone) {
+				font-size: 1.5em;
+			}
+
+			a {
+				color: inherit;
+			}
+		}
+
+		.post-meta {
+			display: block;
+			font-size: 0.9em;
+			color: $color-gray-50;
+
+			@media only screen and (max-width: $breakpoint-tablet) {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
 
 			a {
 				color: inherit;
@@ -1039,7 +1107,126 @@ body {
 		}
 
 		.post-excerpt {
+			margin-top: $gutter/4;
 			margin-bottom: 0;
+
+			@media only screen and (max-width: $breakpoint-phone) {
+				display: none;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Post Share
+   ========================================================================== */
+
+.post-author {
+	position: relative;
+	margin-top: $gutter*4;
+	margin-bottom: $gutter;
+	padding: $gutter;
+	border: 2px solid rgba(255, 245, 0, 0.8);
+	box-sizing: border-box;
+
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+
+	.post-author-label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		padding: 0 $gutter/4;
+		color: $color-gray-50;
+		font-size: 0.75em;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		line-height: $gutter;
+	}
+
+	.post-author-avatar {
+		width: $gutter*3;
+		height: $gutter*3;
+		border-radius: 100%;
+		float: left;
+		margin-right: $gutter;
+	}
+
+	.post-author-name {
+		margin: 0;
+		line-height: $gutter*0.75;
+	}
+
+	.post-author-biografie {
+		margin: 0;
+		line-height: $gutter*0.75;
+		color: $color-gray-50;
+	}
+
+	.post-author-meta {
+		display: block;
+		line-height: $gutter;
+		margin: $gutter/4 0 0;
+
+		> span {
+			position: relative;
+			display: inline-block;
+			padding-left: 1.6em;
+			color: $color-gray-70;
+
+			&:hover {
+				color: $color-gray-50;
+			}
+
+			&:before {
+				display: inline-block;
+				font-family: "icon";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1.6em;
+				font-size: 1em;
+				text-align: center;
+				color: inherit;
+				z-index: 2;
+			}
+
+			a {
+				position: relative;
+				display: inline-block;
+				z-index: 4;
+
+				span {
+					display: none;
+				}
+			}
+
+			&.author-more {
+				padding-left: 0;
+				margin-right: $gutter/4;
+
+				a {
+					position: relative;
+					display: inline-block;
+					padding: 0 $gutter/4;
+
+					&:after {
+						content: '';
+						position: absolute;
+						top: 15%;
+						left: 0;
+						width: 100%;
+						height: 70%;
+						border: 2px solid $color-primary;
+						box-sizing: border-box;
+					}
+				}
+			}
 		}
 	}
 }
@@ -1052,7 +1239,7 @@ body {
 		background: $color-gray-90;
 		line-height: $gutter;
 		overflow: hidden;
-		margin-top: $gutter*4;
+		margin-top: -$gutter/2;
 		margin-bottom: $gutter;
 
 		&:after {

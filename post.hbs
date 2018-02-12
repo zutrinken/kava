@@ -7,10 +7,9 @@
 			<div class="inner">
 				<h1 class="post-title">{{{title}}}</h1>
 				<span class="post-meta">
-					<span class="post-date">{{date format="DD MMM YYYY"}}</span>
-					<span class="post-author"><figure class="avatar">{{#if author.profile_image}}<img src="{{author.profile_image}}" alt="{{author.name}}" />{{/if}}</figure>{{author}}</span>
-					<span class="post-reading-time">{{reading_time seconds=(t "under 1 min read") minute=(t "1 min read") minutes=(t "% min read")}}</span>
-					<span class="post-tags">{{tags separator=", "}}</span>
+					<span class="post-meta-date">{{date format="DD MMM YYYY"}}</span>
+					<span class="post-meta-author"><figure class="avatar">{{#if author.profile_image}}<img src="{{author.profile_image}}" alt="{{author.name}}" />{{/if}}</figure>{{author}}</span>
+					<span class="post-meta-tags">{{tags separator=", "}}</span>
 				</span>
 			</div>
 			{{#if feature_image}}
@@ -21,8 +20,36 @@
 			<section class="post-content">
 				{{content}}
 			</section>
+			{{#author}}
+			<aside class="post-author">
+				<span class="post-author-label">{{t "Author"}}</span>
+				<figure class="post-author-avatar avatar">
+					{{#if profile_image}}
+						<img src="{{profile_image}}" alt="{{name}}" />
+					{{/if}}
+				</figure>
+				<div class="post-author-info">
+					<h4 class="post-author-name">{{name}}</h4>
+					{{#if bio}}
+						<p class="post-author-biografie">{{{bio}}}</p>
+					{{/if}}
+					<p class="post-author-meta author-meta">
+						<span class="author-more"><a href="{{url}}">{{t "Read more"}}</a></span>
+						{{#if website}}
+						<span class="author-website"><a target="_blank" href="{{website}}">Website</a></span>
+						{{/if}}
+						{{#if twitter}}
+						<span class="author-twitter"><a target="_blank" href="https://twitter.com/{{twitter}}">Twitter</a></span>
+						{{/if}}
+						{{#if facebook}}
+						<span class="author-facebook"><a target="_blank" href="https://facebook.com/{{facebook}}">Facebook</a></span>
+						{{/if}}
+					</p>
+				</div>
+			</aside>
+			{{/author}}
 			<div class="post-share">
-				<span class="post-share-label">Share</span>
+				<span class="post-share-label">{{t "Share"}}</span>
 				<ul class="post-share-list">
 					<li>
 						<a class="icon-twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
@@ -43,7 +70,7 @@
 			</div>
 			{{#if @labs.subscribers}}
 			<section class="post-subscribe">
-					<span class="post-subscribe-label">Subscribe</span>
+					<span class="post-subscribe-label">{{t "Subscribe"}}</span>
           <span class="post-subscribe-info">Get the latest posts delivered right to your inbox</span>
 					{{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
 			</section>
