@@ -680,13 +680,13 @@ body {
 	}
 
 	&:after {
+		content: '';
 		position: absolute;
 		width: 100%;
 		height: 50%;
 		left: 0;
 		bottom: 0;
 		z-index: 8;
-		content: '';
 		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
 		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,r gba(0,0,0,0.6) 100%);
 	}
@@ -1503,10 +1503,13 @@ body {
 		.post-nav-post {
 			position: relative;
 			display: block;
+			opacity: 0;
+			transition: opacity ease-out 0.2s;
 
 			@media only screen and (max-width: $breakpoint-tablet) {
 				background: $color-gray-90;
 				padding: $gutter/2;
+				opacity: 1 !important;
 			}
 
 			.post-nav-type {
@@ -1530,7 +1533,8 @@ body {
 				font-size: 3em;
 				line-height: 1em;
 				margin: 0 0 $gutter/4;
-				color: $color-primary;
+				color: rgba(120,120,120,0.4);
+				transition: color ease-out 0.2s;
 
 				@media only screen and (max-width: $breakpoint-laptop) {
 					font-size: 2em;
@@ -1539,6 +1543,7 @@ body {
 				@media only screen and (max-width: $breakpoint-tablet) {
 					font-size: 1.5em;
 					margin-bottom: $gutter/2;
+					color: black;
 				}
 			}
 
@@ -1556,9 +1561,14 @@ body {
 		&:hover {
 
 			.post-nav-post {
+				opacity: 1 !important;
 
 				@media only screen and (max-width: $breakpoint-tablet) {
 					background: $color-primary;
+				}
+
+				.post-nav-title {
+					color: rgba(80,80,80,0.6);
 				}
 
 				.post-nav-title,

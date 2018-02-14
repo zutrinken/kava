@@ -1,5 +1,9 @@
 jQuery(function($) {
 
+	/* ==========================================================================
+	 ghostHunter
+	 ========================================================================== */
+
 	$("#search-field").ghostHunter({
 		results: "#results",
 		result_template: '<article class="post"><h2 class="post-title"><a href="{{link}}">{{title}}</a></h2><span class="post-meta">On <span class="post-date">{{pubDate}}</span></span></article>',
@@ -15,6 +19,39 @@ jQuery(function($) {
       }
     }
 	});
+
+	/* ==========================================================================
+	 Reading Progress
+	 ========================================================================== */
+
+var post = $('.post');
+var viewport = $(window);
+
+function readingProgress() {
+	if (post.length >= 1) {
+		var postBottom = post.offset().top + post.height();
+		var windowBottom = viewport.scrollTop() + viewport.height();
+		var progress = 100 - (((postBottom - windowBottom) / (postBottom - viewport.height())) * 100);
+		if (progress > 100) {
+			$('.post-nav-post').css('opacity', '0.5');
+		} else {
+			$('.post-nav-post').css('opacity', progress / 250 + 0.2);
+		}
+	}
+}
+readingProgress();
+
+viewport.on({
+	'scroll': function() {
+		readingProgress();
+	},
+	'resize': function() {
+		readingProgress();
+	},
+	'orientationchange': function() {
+		readingProgress();
+	}
+});
 
 	/* ==========================================================================
 	   Run Highlight
