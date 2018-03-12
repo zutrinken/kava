@@ -1544,6 +1544,7 @@ body {
 					font-size: 1.5em;
 					margin-bottom: $gutter/2;
 					color: black;
+					transition-duration: 0;
 				}
 			}
 
@@ -1588,7 +1589,8 @@ body {
    ========================================================================== */
 
 .pagination {
-	padding: $gutter 0;
+	position: relative;
+	padding: $gutter $gutter/2;
 	text-align: center;
 
 	&:after {
@@ -1598,23 +1600,100 @@ body {
 	}
 
 	.pagination-item {
-		display: inline-block;
+		position: relative;
+		display: block;
+		width: 50%;
+		line-height: $gutter/2;
+		padding: $gutter/2;
+		color: black;
+		font-weight: 700;
+		background: $color-gray-90;
+		box-sizing: border-box;
+		z-index: 1;
 
 		&:hover,
 		&:focus {
+			background: $color-primary;
+			color: white;
 
+			span:after {
+				border-color: white;
+			}
+		}
+
+		span {
+			position: relative;
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				width: $gutter/4;
+				height: $gutter/4;
+				margin-top: -$gutter/8;
+				box-sizing: border-box;
+				border-top: 2px solid black;
+			}
+		}
+
+		&.disabled {
+			background: transparent;
+			border: 2px solid $color-gray-90;
+			color: $color-gray-70;
+
+			span:after {
+				border-color: $color-gray-70;
+			}
 		}
 	}
 
 	.pagination-prev {
 		float: left;
+		left: -$gutter/2;
+
+		span {
+			padding-left: $gutter/2;
+
+			&:after {
+				left: 0;
+				border-left: 2px solid black;
+				transform: rotate(-45deg);
+			}
+		}
 	}
 
 	.pagination-next {
 		float: right;
+		right: -$gutter/2;
+
+		span {
+			padding-right: $gutter/2;
+
+			&:after {
+				right: 0;
+				border-right: 2px solid black;
+				transform: rotate(45deg);
+			}
+		}
 	}
 
 	.pagination-info {
-		display: inline-block;
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: $gutter*2;
+		margin-left: -$gutter;
+		line-height: $gutter/2;
+		margin-top: -$gutter/4;
+		transform: rotate(-90deg);
+		box-sizing: border-box;
+		color: $color-gray-80;
+		background: white;
+		font-weight: 700;
+		letter-spacing: 2px;
+		text-align: center;
+		text-transform: uppercase;
+		z-index: 2;
 	}
 }

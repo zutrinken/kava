@@ -1,9 +1,13 @@
 <nav id="pagination" class="pagination" role="pagination">
     {{#if prev}}
         <a class="pagination-item pagination-prev" href="{{page_url prev}}"><span>{{t "Newer posts"}}</span></a>
+    {{else}}
+        <span class="pagination-item pagination-prev disabled"><span>{{t "Newer posts"}}</span></span>
     {{/if}}
-    <span class="pagination-info">{{t "Page {page} of {pages}" page=page pages=pages}}</span>
+    <span class="pagination-info">{{t "{page} / {pages}" page=page pages=pages}}</span>
     {{#if next}}
         <a class="pagination-item pagination-next" href="{{page_url next}}"><span>{{t "Older posts"}}</span></a>
+    {{else}}
+        <span class="pagination-item pagination-next disabled"><span>{{t "Older posts"}}</span></span>
     {{/if}}
 </nav>
