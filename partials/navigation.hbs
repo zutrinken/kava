@@ -5,6 +5,8 @@
 				<a class="{{slug}}" href="{{url absolute="true"}}">{{label}}</a>
 			</li>
 		{{/foreach}}
+	</ul>
+	<ul class="menu-list menu-search">
 		{{#if @blog.twitter}}
 			<li class="menu-list-item">
 				<a class="twitter" href="{{twitter_url}}" title="{{@blog.twitter}}"><i class="icon-twitter"></i></a>
@@ -23,9 +25,11 @@
 		<li class="menu-list-item">
 			<a class="rss" href="{{@blog.url}}/rss/" title="Feed"><i class="icon-rss"></i></a>
 		</li>
+		<li class="menu-list-item">
+			<form class="search">
+				<input type="text" id="search-field" placeholder="Search ..." />
+				<input type="submit" value="search" />
+			</form>
+		</li>
 	</ul>
-	<form class="menu-search">
-		<input type="text" id="search-field" placeholder="Search ..." />
-		<input type="submit" value="search" />
-	</form>
 </div>
