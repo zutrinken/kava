@@ -787,6 +787,7 @@ body {
 
 	.credits {
 		text-align: center;
+		color: $color-gray-50;
 
 		&:after {
 			clear: both;
@@ -1015,6 +1016,10 @@ body {
 			}
 		}
 	}
+
+	.post-content {
+		margin-bottom: $gutter*2;
+	}
 }
 
 
@@ -1177,10 +1182,10 @@ body {
 
 .post-author {
 	position: relative;
-	margin-top: $gutter*4;
+	margin-top: -$gutter/2;
 	margin-bottom: $gutter;
 	padding: $gutter;
-	border: 2px solid rgba(255, 245, 0, 0.8);
+	background: $color-gray-90;
 	box-sizing: border-box;
 
 	&:after {
@@ -1209,6 +1214,12 @@ body {
 		border-radius: 100%;
 		float: left;
 		margin-right: $gutter;
+
+		@media only screen and (max-width: $breakpoint-phone) {
+			width: $gutter*2;
+			height: $gutter*2;
+			margin-right: $gutter/2;
+		}
 	}
 
 	.post-author-name {
@@ -1259,27 +1270,28 @@ body {
 					display: none;
 				}
 			}
+		}
+	}
 
-			&.author-more {
-				padding-left: 0;
-				margin-right: $gutter/4;
+	.author-more {
+		display: block;
+		line-height: $gutter;
+		margin: $gutter/4 0 0;
 
-				a {
-					position: relative;
-					display: inline-block;
-					padding: 0 $gutter/4;
+		a {
+			position: relative;
+			display: inline-block;
+			padding: 0 $gutter/4;
 
-					&:after {
-						content: '';
-						position: absolute;
-						top: 15%;
-						left: 0;
-						width: 100%;
-						height: 70%;
-						border: 2px solid $color-primary;
-						box-sizing: border-box;
-					}
-				}
+			&:after {
+				content: '';
+				position: absolute;
+				top: 15%;
+				left: 0;
+				width: 100%;
+				height: 70%;
+				border: 2px solid $color-primary;
+				box-sizing: border-box;
 			}
 		}
 	}
@@ -1362,9 +1374,31 @@ body {
 		}
 	}
 
+/* ==========================================================================
+   Comments
+   ========================================================================== */
 
 .post-comments {
+	position: relative;
+	background: $color-gray-90;
+	padding: $gutter $gutter/2 $gutter/4;
+	box-sizing: border-box;
+	margin-top: -$gutter/2;
+	margin-bottom: $gutter;
 
+	.post-comments-label {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		padding: 0 $gutter/4;
+		color: $color-gray-50;
+		font-size: 0.75em;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		line-height: $gutter;
+	}
 }
 
 /* ==========================================================================
@@ -1374,14 +1408,14 @@ body {
 .post-subscribe {
 	position: relative;
 	text-align: center;
-	background: $color-gray-90;
+	background: yellow;
 	padding: $gutter*2;
 	box-sizing: border-box;
 	margin-top: -$gutter/2;
 	margin-bottom: $gutter;
 
 	@media only screen and (max-width: $breakpoint-phone) {
-		padding: $gutter/2;
+		padding: $gutter;
 	}
 
 	.post-subscribe-label {
@@ -1403,11 +1437,21 @@ body {
 		margin-top: -$gutter/2;
 		margin-bottom: $gutter/2;
 		color: $color-gray-50;
+
+		@media only screen and (max-width: $breakpoint-phone) {
+			margin-top: 0;
+		}
 	}
 
 	.post-subscribe-form {
 		display: flex;
 		justify-content: center;
+
+		@media only screen and (max-width: $breakpoint-phone) {
+			margin-left: -$gutter/2;
+			margin-right: -$gutter/2;
+			margin-bottom: -$gutter/4;
+		}
 
 		.form-group {
 			min-width: 50%;
@@ -1415,7 +1459,6 @@ body {
 
 		.post-subscribe-input {
 			width: 100%;
-			font-size: 0.8em;
 			height: 3em;
 			padding: 0 1em;
 			border: 2px solid $color-gray-80;
@@ -1433,7 +1476,6 @@ body {
 
 		.post-subscribe-button {
 			display: inline-block;
-			font-size: 0.8em;
 			height: 3em;
 			padding: 0 1em;
 			font-weight: 700;
@@ -1502,6 +1544,7 @@ body {
 			transform: none !important;
 			border: 0;
 			display: flex;
+			flex-grow: 1;
 			padding: $gutter/4;
 			text-align: left;
 		}

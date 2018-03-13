@@ -20,34 +20,13 @@
 			<section class="post-content">
 				{{content}}
 			</section>
-			{{#author}}
-			<aside class="post-author">
-				<span class="post-author-label">{{t "Author"}}</span>
-				<figure class="post-author-avatar avatar">
-					{{#if profile_image}}
-						<img src="{{profile_image}}" alt="{{name}}" />
-					{{/if}}
-				</figure>
-				<div class="post-author-info">
-					<h4 class="post-author-name">{{name}}</h4>
-					{{#if bio}}
-						<p class="post-author-biografie">{{{bio}}}</p>
-					{{/if}}
-					<p class="post-author-meta author-meta">
-						<span class="author-more"><a href="{{url}}">{{t "Read more"}}</a></span>
-						{{#if website}}
-						<span class="author-website"><a target="_blank" href="{{website}}">Website</a></span>
-						{{/if}}
-						{{#if twitter}}
-						<span class="author-twitter"><a target="_blank" href="https://twitter.com/{{twitter}}">Twitter</a></span>
-						{{/if}}
-						{{#if facebook}}
-						<span class="author-facebook"><a target="_blank" href="https://facebook.com/{{facebook}}">Facebook</a></span>
-						{{/if}}
-					</p>
-				</div>
-			</aside>
-			{{/author}}
+			{{#if @labs.subscribers}}
+			<section class="post-subscribe">
+					<span class="post-subscribe-label">{{t "Subscribe"}}</span>
+          <span class="post-subscribe-info">Get the latest posts delivered right to your inbox</span>
+					{{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
+			</section>
+			{{/if}}
 			<div class="post-share">
 				<span class="post-share-label">{{t "Share"}}</span>
 				<ul class="post-share-list">
@@ -68,14 +47,38 @@
 					</li>
 				</ul>
 			</div>
-			{{#if @labs.subscribers}}
-			<section class="post-subscribe">
-					<span class="post-subscribe-label">{{t "Subscribe"}}</span>
-          <span class="post-subscribe-info">Get the latest posts delivered right to your inbox</span>
-					{{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
-			</section>
-			{{/if}}
+			{{#author}}
+			<aside class="post-author">
+				<span class="post-author-label">{{t "Author"}}</span>
+				<figure class="post-author-avatar avatar">
+					{{#if profile_image}}
+						<img src="{{profile_image}}" alt="{{name}}" />
+					{{/if}}
+				</figure>
+				<div class="post-author-info">
+					<h4 class="post-author-name">{{name}}</h4>
+					{{#if bio}}
+						<p class="post-author-biografie">{{{bio}}}</p>
+					{{/if}}
+					<p class="post-author-meta author-meta">
+						{{#if website}}
+						<span class="author-website"><a target="_blank" href="{{website}}">Website</a></span>
+						{{/if}}
+						{{#if twitter}}
+						<span class="author-twitter"><a target="_blank" href="https://twitter.com/{{twitter}}">Twitter</a></span>
+						{{/if}}
+						{{#if facebook}}
+						<span class="author-facebook"><a target="_blank" href="https://facebook.com/{{facebook}}">Facebook</a></span>
+						{{/if}}
+					</p>
+					<p class="author-more">
+						<a href="{{url}}">{{t "Read more"}}</a>
+					</p>
+				</div>
+			</aside>
+			{{/author}}
 			<div class="post-comments">
+				<span class="post-comments-label">{{t "Comments"}}</span>
 				<div id="disqus_thread"></div>
 			</div>
 			<div class="post-nav">
