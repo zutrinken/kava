@@ -28,7 +28,7 @@ $color-primary: #2255EE;
 html {}
 
 body {
-	font: 400 1.5em / 2 'Barlow', sans-serif;
+	font: 400 1.5em / 2 'Montserrat', sans-serif;
 
 	@media only screen and (max-width: $breakpoint-desktop) {
 		font-size: 1.25em;
@@ -36,7 +36,6 @@ body {
 
 	@media only screen and (max-width: $breakpoint-laptop) {
 		font-size: 1em;
-		line-height: 1.5;
 	}
 }
 
@@ -334,7 +333,7 @@ a {
 		color: $color-gray-50;
 		text-shadow: white 0 1px 0;
 		font-size: 0.875em;
-		font-weight: bold;
+		font-weight: 700;
 		border-radius: 4px;
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 white inset;
 	}
@@ -454,6 +453,14 @@ body {
 	width: 100%;
 	min-height: 100vh;
 	padding-bottom: $gutter*9;
+
+	@media only screen and (max-width: $breakpoint-laptop) {
+		padding-bottom: $gutter*6;
+	}
+
+	@media only screen and (max-width: $breakpoint-tablet) {
+		padding-bottom: $gutter*3;
+	}
 }
 
 /* ==========================================================================
@@ -483,6 +490,10 @@ body {
 		list-style: none;
 		padding: 0;
 		margin: 0;
+
+		@media only screen and (max-width: $breakpoint-tablet) {
+			float: none;
+		}
 
 		&:after {
 			clear: both;
@@ -520,8 +531,9 @@ body {
 	.menu-search {
 		float: right;
 
-		.menu-list-item {
-
+		@media only screen and (max-width: $breakpoint-tablet) {
+			float: none;
+			margin-top: $gutter/2;
 		}
 
 		.search {
@@ -765,11 +777,16 @@ body {
 	bottom: $gutter*4;
 	z-index: 20;
 
-	a {
+	@media only screen and (max-width: $breakpoint-tablet) {
+		bottom: $gutter;
+	}
 
+	a {
+		color: inherit;
 	}
 
 	.credits {
+		text-align: center;
 
 		&:after {
 			clear: both;
@@ -783,9 +800,18 @@ body {
 
 		.credits-theme {
 			float: left;
+
+			@media only screen and (max-width: $breakpoint-tablet) {
+				float: none;
+			}
 		}
+
 		.credits-software {
 			float: right;
+
+			@media only screen and (max-width: $breakpoint-tablet) {
+				float: none;
+			}
 		}
 	}
 }
@@ -1092,8 +1118,8 @@ body {
 			}
 
 			@media only screen and (max-width: $breakpoint-phone) {
-				width: $gutter*3;
-				height: $gutter*3;
+				width: $gutter*2.5;
+				height: $gutter*2.5;
 				margin-right: $gutter/2;
 				margin-bottom: 0;
 			}
@@ -1490,10 +1516,10 @@ body {
 			position: absolute;
 			top: 0;
 			left: 50%;
-			margin-left: -$gutter/2;
-			border-left: $gutter/2 solid transparent;
-			border-right: $gutter/2 solid transparent;
-			border-bottom: $gutter/4 solid rgba(200,200,200,0.2);
+			margin-left: -$gutter/4;
+			border-left: $gutter/4 solid transparent;
+			border-right: $gutter/4 solid transparent;
+			border-bottom: $gutter/4 solid rgba(120,120,120,0.5);
 			transition: all ease-out 0.1s;
 
 			@media only screen and (max-width: $breakpoint-tablet) {
@@ -1504,7 +1530,7 @@ body {
 		&:hover {
 
 			&:before {
-				border-bottom-color: black;
+				border-bottom-color: $color-primary;
 			}
 		}
 
@@ -1561,7 +1587,7 @@ body {
 				font-size: 3em;
 				line-height: 1em;
 				margin: 0 0 $gutter/4;
-				color: rgba(120,120,120,0.4);
+				color: $color-gray-50;
 				transition: color ease-out 0.2s;
 
 				@media only screen and (max-width: $breakpoint-laptop) {
@@ -1597,7 +1623,7 @@ body {
 				}
 
 				.post-nav-title {
-					color: rgba(80,80,80,0.6);
+					color: $color-primary;
 				}
 
 				.post-nav-title,
@@ -1651,6 +1677,7 @@ body {
 
 		span {
 			position: relative;
+			display: inline-block;
 
 			&:after {
 				content: '';
