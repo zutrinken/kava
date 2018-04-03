@@ -427,23 +427,33 @@ body {
 
 .inner {
 	margin: 0 auto;
-	max-width: 44em;
-	padding: 0 16em;
+	max-width: 56em;
+	padding: 0 2em;
+}
 
-	@media only screen and (max-width: $breakpoint-desktop) {
-		padding: 0 14em;
-	}
+.page-template .content,
+.post-template .content {
 
-	@media only screen and (max-width: $breakpoint-laptop) {
-		padding: 0 12em;
-	}
+	.inner {
+		margin: 0 auto;
+		max-width: 44em;
+		padding: 0 16em;
 
-	@media only screen and (max-width: $breakpoint-tablet) {
-		padding: 0 $gutter*1.5;
-	}
+		@media only screen and (max-width: $breakpoint-desktop) {
+			padding: 0 14em;
+		}
 
-	@media only screen and (max-width: $breakpoint-phone) {
-		padding: 0 $gutter/2;
+		@media only screen and (max-width: $breakpoint-laptop) {
+			padding: 0 12em;
+		}
+
+		@media only screen and (max-width: $breakpoint-tablet) {
+			padding: 0 $gutter*1.5;
+		}
+
+		@media only screen and (max-width: $breakpoint-phone) {
+			padding: 0 $gutter/2;
+		}
 	}
 }
 
@@ -613,17 +623,17 @@ body {
 }
 
 .header-label {
-	display: block;
 	position: absolute;
-	left: $gutter/2;
-	top: $gutter*0.75;
-	padding: 0 $gutter/4;
-	font-size: 1em;
-	line-height: 1.5em;
-	color: black;
-	background: rgba(255, 245, 0, 0.8);
+	top: 0;
+	left: 0;
+	display: block;
+	padding: 0;
+	color: rgba(0,0,0,0.2);
+	font-size: 0.75em;
+	font-weight: 700;
 	text-transform: uppercase;
-	z-index: -1;
+	letter-spacing: 1px;
+	line-height: $gutter;
 }
 
 .header-logo {
@@ -1200,7 +1210,7 @@ body {
 		left: 0;
 		display: block;
 		padding: 0 $gutter/4;
-		color: $color-gray-50;
+		color: $color-gray-70;
 		font-size: 0.75em;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -1222,8 +1232,13 @@ body {
 		}
 	}
 
+	.post-author-info {
+		padding-left: $gutter*4;
+	}
+
 	.post-author-name {
-		margin: 0;
+		margin: 0 0 $gutter*0.25;
+		font-size: 1.25em;
 		line-height: $gutter*0.75;
 	}
 
@@ -1236,7 +1251,7 @@ body {
 	.post-author-meta {
 		display: block;
 		line-height: $gutter;
-		margin: $gutter/4 0 0;
+		margin: 0;
 
 		> span {
 			position: relative;
@@ -1276,7 +1291,7 @@ body {
 	.author-more {
 		display: block;
 		line-height: $gutter;
-		margin: $gutter/4 0 0;
+		margin: 0;
 
 		a {
 			position: relative;
@@ -1319,7 +1334,7 @@ body {
 			display: block;
 			float: left;
 			padding: 0 $gutter/4;
-			color: $color-gray-50;
+			color: $color-gray-70;
 			font-size: 0.75em;
 			font-weight: 700;
 			text-transform: uppercase;
@@ -1392,7 +1407,7 @@ body {
 		left: 0;
 		display: block;
 		padding: 0 $gutter/4;
-		color: $color-gray-50;
+		color: $color-gray-70;
 		font-size: 0.75em;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -1408,7 +1423,7 @@ body {
 .post-subscribe {
 	position: relative;
 	text-align: center;
-	background: yellow;
+	background: $color-gray-90;
 	padding: $gutter*2;
 	box-sizing: border-box;
 	margin-top: -$gutter/2;
@@ -1424,7 +1439,7 @@ body {
 		left: 0;
 		display: block;
 		padding: 0 $gutter/4;
-		color: $color-gray-50;
+		color: $color-gray-70;
 		font-size: 0.75em;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -1780,14 +1795,15 @@ body {
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		width: $gutter*2;
-		margin-left: -$gutter;
+		width: $gutter*3;
+		margin-left: -$gutter*1.5;
 		line-height: $gutter/2;
 		margin-top: -$gutter/4;
 		transform: rotate(-90deg);
 		box-sizing: border-box;
 		color: $color-gray-80;
 		background: white;
+		font-size: 0.75em;
 		font-weight: 700;
 		letter-spacing: 2px;
 		text-align: center;
