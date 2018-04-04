@@ -658,23 +658,23 @@ body {
 	margin-right: $gutter/2;
 	display: block;
 	width: auto;
-	height: $gutter*1.5;
+	height: 4em;
 	float: left;
+
+	@media only screen and (max-width: $breakpoint-phone) {
+		float: none;
+		margin-bottom: $gutter/2;
+	}
 
 	img {
 		display: block;
 		width: auto;
-		height: $gutter*1.5;
+		height: 4em;
 	}
 
 	&.avatar {
 		border-radius: 100%;
-		width: $gutter*1.5;
-
-		@media only screen and (max-width: $breakpoint-phone) {
-			float: none;
-			margin-bottom: $gutter/2;
-		}
+		width: 4em;
 
 		img {
 			width: 100%;
