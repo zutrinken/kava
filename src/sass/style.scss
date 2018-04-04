@@ -543,11 +543,16 @@ body {
 
 		@media only screen and (max-width: $breakpoint-tablet) {
 			float: none;
-			margin-top: $gutter/2;
+			margin-top: $gutter/4;
 		}
 
 		.search {
 			width: $gutter*4;
+
+			@media only screen and (max-width: $breakpoint-phone) {
+				width: $gutter*6;
+				margin-top: $gutter/2;
+			}
 
 			input[type="text"] {
 				width: 100%;
