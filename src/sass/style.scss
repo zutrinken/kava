@@ -1228,12 +1228,17 @@ body {
 		@media only screen and (max-width: $breakpoint-phone) {
 			width: $gutter*2;
 			height: $gutter*2;
-			margin-right: $gutter/2;
+			margin: $gutter/4 auto;
+			float: none;
 		}
 	}
 
 	.post-author-info {
 		padding-left: $gutter*4;
+
+		@media only screen and (max-width: $breakpoint-phone) {
+			padding-left: 0;
+		}
 	}
 
 	.post-author-name {
