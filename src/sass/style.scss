@@ -659,6 +659,11 @@ body {
 		border-radius: 100%;
 		width: $gutter*1.5;
 
+		@media only screen and (max-width: $breakpoint-phone) {
+			float: none;
+			margin-bottom: $gutter/2;
+		}
+
 		img {
 			width: 100%;
 			height: auto;
@@ -671,6 +676,10 @@ body {
 	font-size: 4em;
 	line-height: 1em;
 	margin: 0;
+
+	@media only screen and (max-width: $breakpoint-phone) {
+		font-size: 3em;
+	}
 }
 
 .header-description {
