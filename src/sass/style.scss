@@ -546,12 +546,24 @@ body {
 			margin-top: $gutter/4;
 		}
 
+		.menu-list-item {
+
+			&:last-child {
+
+				@media only screen and (max-width: $breakpoint-tablet) {
+					width: 100%;
+					clear: both;
+					float: none;
+					padding-top: $gutter/2;
+				}
+			}
+		}
+
 		.search {
 			width: $gutter*4;
 
 			@media only screen and (max-width: $breakpoint-phone) {
-				width: $gutter*6;
-				margin-top: $gutter/2;
+				width: 100%;
 			}
 
 			input[type="text"] {
