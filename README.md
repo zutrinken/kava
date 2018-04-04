@@ -4,10 +4,10 @@ BRVTAL GHOST THEME
 
 ## Demo
 
-* [Blog](http://kava.zutrinken.com)
-* [Post](http://kava.zutrinken.com/demo)
-* [Tags](http://kava.zutrinken.com/tag/general)
-* [Author](http://kava.zutrinken.com/author/zutrinken)
+* [Blog](https://kava.zutrinken.com)
+* [Post](https://kava.zutrinken.com/demo)
+* [Tags](https://kava.zutrinken.com/tag/general)
+* [Author](https://kava.zutrinken.com/author/zutrinken)
 
 ## Screenshots
 
