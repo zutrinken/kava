@@ -1604,6 +1604,10 @@ body {
 			.post-nav-type {
 				left: -$gutter*2.5;
 				transform: rotate(-90deg);
+
+				@media only screen and (max-width: $breakpoint-phone) {
+					left: -$gutter*2.125;
+				}
 			}
 		}
 
@@ -1614,6 +1618,10 @@ body {
 			.post-nav-type {
 				right: -$gutter*2.5;
 				transform: rotate(90deg);
+
+				@media only screen and (max-width: $breakpoint-phone) {
+					right: -$gutter*2.125;
+				}
 			}
 		}
 
