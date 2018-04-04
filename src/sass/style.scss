@@ -638,22 +638,26 @@ body {
 
 .header-logo {
 	margin: 0;
+	margin-right: $gutter/2;
+	display: block;
+	width: auto;
+	height: $gutter*1.5;
+	float: left;
 
 	img {
 		display: block;
-		width: 100%;
-		height: auto;
+		width: auto;
+		height: $gutter*1.5;
 	}
 
 	&.avatar {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 8em;
-		height: 8em;
-		margin-left: -5em;
 		border-radius: 100%;
-		z-index: -2;
+		width: $gutter*1.5;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 }
 
