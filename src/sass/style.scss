@@ -1114,7 +1114,6 @@ body {
 				position: absolute;
 				left: 0;
 				top: 0;
-				margin-left: -0.5em;
 				width: 1em;
 				height: 1em;
 				font-size: 12em;
@@ -1122,6 +1121,11 @@ body {
 				text-align: center;
 				color: rgba(255, 245, 0, 0.8);
 				z-index: -1;
+
+				@media only screen and (max-width: $breakpoint-phone) {
+					font-size: 8em;
+					margin-left: -0.5em;
+				}
 			}
 		}
 
