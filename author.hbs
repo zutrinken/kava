@@ -3,6 +3,9 @@
 {{#author}}
 <div id="header" class="header{{#if cover_image}} has-cover{{/if}}">
 	<div class="inner">
+		{{#if cover_image}}
+			<div class="header-cover" style="background-image: url('{{cover_image}}');"></div>
+		{{/if}}
 		<span class="header-title">
 			<figure class="header-logo avatar">
 				{{#if profile_image}}
@@ -28,9 +31,6 @@
 			</span>
 		</span>
 	</div>
-	{{#if cover_image}}
-		<div class="header-cover" style="background-image: url('{{cover_image}}');"></div>
-	{{/if}}
 </div>
 {{/author}}
 <div id="posts">

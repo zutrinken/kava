@@ -2,6 +2,9 @@
 
 <div id="header" class="header{{#if tag.feature_image}} has-cover{{/if}}">
 	<div class="inner">
+		{{#if tag.feature_image}}
+			<div class="header-cover" style="background-image: url('{{tag.feature_image}}');"></div>
+		{{/if}}
 		<span class="header-title">
 			<span class="header-label">{{t "Tag"}}</span>
 			<h1 class="header-name">{{tag.name}}</h1>
@@ -13,9 +16,6 @@
 			</span>
 		</span>
 	</div>
-	{{#if tag.feature_image}}
-		<div class="header-cover" style="background-image: url('{{tag.feature_image}}');"></div>
-	{{/if}}
 </div>
 <div id="posts">
 	<div class="inner">

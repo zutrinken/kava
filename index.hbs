@@ -2,6 +2,9 @@
 
 <div id="header" class="header{{#if @blog.cover_image}} has-cover{{/if}}">
 	<div class="inner">
+		{{#if @blog.cover_image}}
+			<div class="header-cover" style="background-image: url({{@blog.cover_image}})"></div>
+		{{/if}}
 		<div class="header-title" href="{{@blog.url}}">
 			{{#if @blog.logo}}
 				<figure class="header-logo">
@@ -14,9 +17,6 @@
 			{{/if}}
 		</div>
 	</div>
-	{{#if @blog.cover_image}}
-		<div class="header-cover" style="background-image: url({{@blog.cover_image}})"></div>
-	{{/if}}
 </div>
 <div id="posts">
 	<div class="inner">
