@@ -8,8 +8,8 @@
 				<h1 class="post-title">{{{title}}}</h1>
 				<span class="post-meta">
 					<span class="post-meta-date">{{date format="DD MMM YYYY"}}</span>
-					<span class="post-meta-author"><figure class="avatar">{{#if author.profile_image}}<img src="{{author.profile_image}}" alt="{{author.name}}" />{{/if}}</figure>{{author}}</span>
-					<span class="post-meta-tags">{{tags separator=", "}}</span>
+					<span class="post-meta-author"><figure class="avatar">{{#if primary_author.profile_image}}<img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" />{{/if}}</figure>{{primary_author.name}}</span>
+					{{#if tags}}<span class="post-meta-tags">{{tags separator=", "}}</span>{{/if}}
 				</span>
 			</div>
 			{{#if feature_image}}
@@ -47,7 +47,7 @@
 					</li>
 				</ul>
 			</div>
-			{{#author}}
+			{{#primary_author}}
 			<aside class="post-author">
 				<span class="post-author-label">{{t "Author"}}</span>
 				<figure class="post-author-avatar avatar">
@@ -76,7 +76,7 @@
 					</p>
 				</div>
 			</aside>
-			{{/author}}
+			{{/primary_author}}
 			<div class="post-comments">
 				<span class="post-comments-label">{{t "Comments"}}</span>
 				<div id="disqus_thread"></div>

@@ -56,6 +56,23 @@ a {
 }
 
 .post-content {
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+
+	> * {
+		min-width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
 
 	a {
 		color: $color-primary;
@@ -91,7 +108,7 @@ a {
 
 	h1, h2, h3, h4, h5, h6 {
 		text-rendering: optimizeLegibility;
-		margin: 2em 0;
+		margin: 0 0 2em;
 
 		a {
 			font-weight: inherit;
@@ -129,7 +146,7 @@ a {
 	}
 
 	p {
-		margin: 2em 0;
+		margin: 0 0 2em;
 	}
 
 	p + p {
@@ -181,7 +198,7 @@ a {
 	ol,
 	ul {
 		padding-left: $gutter;
-		margin: 2em 0;
+		margin: 0 0 2em;
 
 		ol,
 		ul {
@@ -192,7 +209,7 @@ a {
 
 	dl {
 		padding-left: $gutter;
-		margin: 2em 0;
+		margin: 0 0 2em;
 
 		dt {
 			font-size: 0.875em;
@@ -219,14 +236,14 @@ a {
 	hr {
 		display: block;
 		height: 2px;
-		margin: 2em 0;
+		margin: 0 0 2em;
 		padding: 0;
 		background: $color-gray-80;
 		border: 0;
 	}
 
 	blockquote {
-		margin: 2em 0;
+		margin: 0 0 2em;
 		padding: 0;
 		padding-left: $gutter*0.75;
 		box-sizing: border-box;
@@ -263,7 +280,7 @@ a {
 	}
 
 	pre {
-		margin: 2em 0;
+		margin: 0 0 2em;
 		width: 100%;
 		padding: $gutter/2;
 		font-family: monospace;
@@ -341,41 +358,128 @@ a {
 	table {
 		width: 100%;
 		max-width: 100%;
-		margin: 2em 0;
+		margin: 0 0 2em;
 		background: $color-gray-90;
-	}
 
-	table th,
-	table td {
-		position: relative;
-		padding: $gutter/2;
-		line-height: 1em;
-		text-align: left;
-	}
-	table th {
-		font-weight: 700;
-		font-size: 0.75em;
-		line-height: 1.334em;
-		padding: $gutter/2;
+		th,
+		td {
+			position: relative;
+			padding: $gutter/2;
+			line-height: 1em;
+			text-align: left;
+		}
+
+		th {
+			font-weight: 700;
+			font-size: 0.75em;
+			line-height: 1.334em;
+			padding: $gutter/2;
+		}
 	}
 
 	img {
 		display: block;
 		max-width: 100%;
 		height: auto;
-		margin: 2em 0;
+		margin: 0 0 2em;
 	}
 
 	iframe {
-		margin: 2em 0;
+		margin: 0 0 2em;
 	}
 
 	.fluid-width-video-wrapper {
-		margin: 2em 0;
+		margin: 0 0 2em;
 
 		iframe {
 			margin: auto;
 		}
+	}
+
+	.kg-image-card {
+	  margin: 0 0 2em;
+	  max-width: none !important;
+
+	  &.kg-width-wide {
+	    max-width: 60em !important;
+	    min-width: 100%;
+	    width: 75vw;
+			margin: 1em 0 3em;
+	  }
+
+	  &.kg-width-full {
+	    max-width: none;
+	    width: 100vw;
+	    margin: 2em 0 4em;
+	  }
+
+	  .kg-image {
+	    margin: 0 auto;
+	  }
+
+	  figcaption {
+	    color: $color-gray-50;
+	    text-align: center;
+	    max-width: 40em;
+	    margin: auto;
+	  	font-size: 0.75em;
+	  	padding: 1em 0;
+	  }
+
+	  .kg-image-full + figcaption {
+	    margin-bottom: 1.334em;
+	  }
+	}
+
+	.kg-gallery-card {
+	  margin: 0 0 2em;
+	  max-width: 60em !important;
+	  min-width: 100%;
+	  width: 75vw;
+
+	  figcaption {
+	    color: $color-gray-50;
+	    text-align: center;
+	    max-width: 40em;
+	    margin: auto;
+	  	font-size: 0.75em;
+			padding: 1em 0;
+	  }
+	}
+
+	.kg-gallery-container {
+	  display: flex;
+	  flex-direction: column;
+	}
+
+	.kg-gallery-row {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: center;
+	}
+
+	.kg-gallery-image img {
+	  display: block;
+	  margin: 0;
+	  width: 100%;
+	  height: 100%;
+	}
+
+	.kg-gallery-row:not(:first-of-type) {
+	  margin: 0.75em 0 0 0;
+	}
+
+	.kg-gallery-image:not(:first-of-type) {
+	  margin: 0 0 0 0.75em;
+	}
+
+	.kg-embed-card {
+	  margin: 0 0 2em;
+
+	  > * {
+	    margin-left: auto;
+	    margin-right: auto;
+	  }
 	}
 }
 
@@ -1036,6 +1140,7 @@ body {
 	}
 
 	.post-content {
+		margin-top: $gutter;
 		margin-bottom: $gutter*2;
 	}
 }
