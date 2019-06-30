@@ -1,0 +1,17 @@
+{
+  "No posts" : "Keine Artikel",
+  "1 post" : "Ein Artikel",
+  "% posts" : "% Artikel",
+  "Newer posts" : "Neuere Artikel",
+  "Older posts" : "Ältere Artikel",
+  "Page {page} of {pages}" : "Seite {page} von {pages}",
+  "On" : "Am",
+  "by" : "von",
+  "under 1 min read" : "Lesezeit < 1 Minute",
+  "1 min read" : "Lesezeit: ~1 Minute",
+  "% min read" : "Lesezeit: ~% Minute",
+  "Searchresults" : "Suchergebnisse",
+  "posts found" : "Gefundene Artikel",
+  "Theme {themelink} by {creatorlink}" : "Theme {themelink} von {creatorlink}",
+  "Published with {ghostlink}" : "Veröffentlicht mit {ghostlink}"
+}
