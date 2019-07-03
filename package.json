@@ -2,7 +2,7 @@
   "name": "kava",
   "description": "Ghost Theme",
   "demo": "https://kava.zutrinken.com",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "engines": {
     "ghost": ">=2.1.0"
   },
