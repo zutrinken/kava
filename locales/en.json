@@ -13,5 +13,15 @@
   "Searchresults" : "Searchresults",
   "posts found" : "posts found",
   "Theme {themelink} by {creatorlink}" : "Theme {themelink} by {creatorlink}",
-  "Published with {ghostlink}" : "Published with {ghostlink}"
+  "Published with {ghostlink}" : "Published with {ghostlink}",
+  "Subscribe" : "Subscribe",
+  "Get the latest posts delivered right to your inbox" : "Get the latest posts delivered right to your inbox",
+  "Your email address" : "Your email address",
+  "Share" : "Share",
+  "Author" : "Author",
+  "Read more" : "Read more",
+  "Comments" : "Comments",
+  "Next" : "Next",
+  "Previous" : "Previous",
+  "Search" : "Search"
 }

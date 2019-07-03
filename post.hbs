@@ -23,8 +23,8 @@
 			{{#if @labs.subscribers}}
 			<section class="post-subscribe">
 					<span class="post-subscribe-label">{{t "Subscribe"}}</span>
-          <span class="post-subscribe-info">Get the latest posts delivered right to your inbox</span>
-					{{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
+          <span class="post-subscribe-info">{{t "Get the latest posts delivered right to your inbox"}}</span>
+					{{subscribe_form placeholder=(t "Your email address") form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
 			</section>
 			{{/if}}
 			<div class="post-share">
