@@ -1,19 +1,19 @@
 {{!< default}}
 
-<div id="header" class="header{{#if @blog.cover_image}} has-cover{{/if}}">
+<div id="header" class="header{{#if @site.cover_image}} has-cover{{/if}}">
 	<div class="inner">
-		{{#if @blog.cover_image}}
-			<div class="header-cover" style="background-image: url({{@blog.cover_image}})"></div>
+		{{#if @site.cover_image}}
+			<div class="header-cover" style="background-image: url({{@site.cover_image}})"></div>
 		{{/if}}
-		<div class="header-title" href="{{@blog.url}}">
-			{{#if @blog.logo}}
+		<div class="header-title" href="{{@site.url}}">
+			{{#if @site.logo}}
 				<figure class="header-logo">
-					<img src="{{@blog.logo}}" alt="Logo" />
+					<img src="{{@site.logo}}" alt="Logo" />
 				</figure>
 			{{/if}}
-			<h1 class="header-name">{{@blog.title}}</h1>
-			{{#if @blog.description}}
-				<span class="header-description">{{@blog.description}}</span>
+			<h1 class="header-name">{{@site.title}}</h1>
+			{{#if @site.description}}
+				<span class="header-description">{{@site.description}}</span>
 			{{/if}}
 		</div>
 	</div>
