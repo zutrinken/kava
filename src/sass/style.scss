@@ -1774,6 +1774,7 @@ body {
 				margin: 0 0 $gutter/4;
 				color: $color-gray-50;
 				transition: color ease-out 0.2s;
+				hyphens: auto;
 
 				@media only screen and (max-width: $breakpoint-laptop) {
 					font-size: 2em;
