@@ -1263,6 +1263,7 @@ body {
 			margin-bottom: $gutter/4;
 			font-size: 2em;
 			line-height: 1.25em;
+			hyphens: auto;
 
 			@media only screen and (max-width: $breakpoint-tablet) {
 				font-size: 1.75em;
