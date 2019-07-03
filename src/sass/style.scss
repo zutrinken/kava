@@ -974,6 +974,7 @@ body {
 			font-size: 8vw;
 			line-height: 1em;
 			margin: $gutter 0;
+			hyphens: auto;
 
 			@media only screen and (max-width: $breakpoint-phone) {
 				font-size: 2.5em;
