@@ -2,12 +2,7 @@
 
 BRVTAL GHOST THEME
 
-## Demo
-
-* [Blog](https://kava.zutrinken.com)
-* [Post](https://kava.zutrinken.com/demo)
-* [Tags](https://kava.zutrinken.com/tag/general)
-* [Author](https://kava.zutrinken.com/author/zutrinken)
+Demo: [kava.zutrinken.com](https://kava.zutrinken.com/)
 
 ## Screenshots
 
