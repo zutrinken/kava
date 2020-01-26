@@ -17,10 +17,29 @@ Demo: [kava.zutrinken.com](https://kava.zutrinken.com/)
 </tr>
 </table>
 
+## Setup [Disqus](https://disqus.com/)
 
-## Setup
+1. Go to __Code injection__.  
+2. Add this to __Blog Header__:  
+````
+<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>
+````
 
-To enable [Disqus](https://disqus.com/) comments go to your blogs code injection settings and add `<script>var disqus="YOUR_DISQUS_SHORTNAME";</script>` to your blog header.
+## Setup search
+
+The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter):
+
+1. Go to __Integrations__.  
+2. Choose __Add custom integration__, name it `ghostHunter` and choose __Create__. Copy the generated Content API Key.  
+3. Go to __Code injection__.  
+4. Add this to __Blog Header__:  
+````
+<script>
+  var ghosthunter_key = 'PASTE_THE_GENERATED_KEY_HERE';
+  //optional: set your custom ghost_root url, default is "/ghost/api/v2"
+  var ghost_root_url = '/ghost/api/v2';
+</script>
+````
 
 ## Development
 
