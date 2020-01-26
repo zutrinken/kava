@@ -1,41 +1,30 @@
 /* ==========================================================================
    Includes
    ========================================================================== */
-
 @import "fonts";
 @import "icons";
-
-$breakpoint-phone:		480px;
-$breakpoint-tablet:		800px;
-$breakpoint-laptop:		1200px;
-$breakpoint-desktop:	1600px;
-
+$breakpoint-phone: 480px;
+$breakpoint-tablet: 800px;
+$breakpoint-laptop: 1200px;
+$breakpoint-desktop: 1600px;
 $gutter: 40px;
-
 $color-gray-90: #eee;
 $color-gray-80: #ddd;
 $color-gray-70: #ccc;
 $color-gray-50: #666;
-
 $color-primary: #2255EE;
-
-
 /* ==========================================================================
    Basics
    ========================================================================== */
-
-
 html {
 	background: white;
 }
 
 body {
 	font: 400 1.5em / 2 'Montserrat', sans-serif;
-
 	@media only screen and (max-width: $breakpoint-desktop) {
 		font-size: 1.25em;
 	}
-
 	@media only screen and (max-width: $breakpoint-laptop) {
 		font-size: 1em;
 	}
@@ -45,13 +34,12 @@ a {
 	color: $color-primary;
 	text-decoration: none;
 
-	&:hover,
-	&:focus {
-
-	}
+	&:focus,
+	&:hover {}
 }
 
-::-moz-selection, ::selection {
+::-moz-selection,
+::selection {
 	color: #222;
 	background: #D6EDFF;
 	text-shadow: none;
@@ -59,8 +47,8 @@ a {
 
 .post-content {
 	display: flex;
-  flex-direction: column;
-  align-items: center;
+	flex-direction: column;
+	align-items: center;
 
 	> * {
 		min-width: 100%;
@@ -82,17 +70,17 @@ a {
 		font-weight: 400;
 		transition: all ease-out 0.2s;
 
-		&:hover,
-		&:focus {
-
-		}
+		&:focus,
+		&:hover {}
 	}
 
-	em, i {
+	em,
+	i {
 		font-style: italic;
 	}
 
-	strong, b {
+	b,
+	strong {
 		font-weight: 700;
 
 		a {
@@ -104,11 +92,14 @@ a {
 		font-size: 0.9em;
 	}
 
-	mark {
+	mark {}
 
-	}
-
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		text-rendering: optimizeLegibility;
 		margin: 0 0 2em;
 
@@ -167,11 +158,10 @@ a {
 		margin: 0.5em 0;
 	}
 
-	ul > li:before,
-	ol > li:before {
+	ol > li:before,
+	ul > li:before {
 		position: absolute;
 		margin-left: -$gutter;
-
 		font-size: 1em;
 		font-weight: 700;
 		color: $color-primary;
@@ -246,8 +236,7 @@ a {
 
 	blockquote {
 		margin: 0 0 2em;
-		padding: 0;
-		padding-left: $gutter*0.75;
+		padding: 0 0 0 $gutter*0.75;
 		box-sizing: border-box;
 		font-style: italic;
 		font-weight: 400;
@@ -314,8 +303,7 @@ a {
 			display: block;
 			border: 0;
 			padding: $gutter/2;
-			margin: -$gutter/2;
-			margin-left: $gutter/2;
+			margin: -$gutter/2 -$gutter/2 -$gutter/2 $gutter/2;
 			white-space: inherit;
 			overflow-x: scroll;
 		}
@@ -328,13 +316,11 @@ a {
 			top: 0;
 			padding: $gutter/2 0;
 			box-sizing: border-box;
-
 			font-size: 1em;
 			line-height: 1.5em;
 			text-align: right;
 			user-select: none;
 			cursor: default;
-
 			background: $color-gray-90;
 
 			.line {
@@ -363,8 +349,8 @@ a {
 		margin: 0 0 2em;
 		background: $color-gray-90;
 
-		th,
-		td {
+		td,
+		th {
 			position: relative;
 			padding: $gutter/2;
 			line-height: 1em;
@@ -399,92 +385,194 @@ a {
 	}
 
 	.kg-image-card {
-	  margin: 0 0 2em;
-	  max-width: none !important;
+		margin: 0 0 2em;
+		max-width: none !important;
 
-	  &.kg-width-wide {
-	    max-width: 60em !important;
-	    min-width: 100%;
-	    width: 75vw;
+		&.kg-width-wide {
+			max-width: 60em !important;
+			min-width: 100%;
+			width: 75vw;
 			margin: 1em 0 3em;
-	  }
+		}
 
-	  &.kg-width-full {
-	    max-width: none;
-	    width: 100vw;
-	    margin: 2em 0 4em;
-	  }
+		&.kg-width-full {
+			max-width: none;
+			width: 100vw;
+			margin: 2em 0 4em;
+		}
 
-	  .kg-image {
-	    margin: 0 auto;
-	  }
+		.kg-image {
+			margin: 0 auto;
+		}
 
-	  figcaption {
-	    color: $color-gray-50;
-	    text-align: center;
-	    max-width: 40em;
-	    margin: auto;
-	  	font-size: 0.75em;
-	  	padding: 1em 0;
-	  }
+		figcaption {
+			color: $color-gray-50;
+			text-align: center;
+			max-width: 40em;
+			margin: auto;
+			font-size: 0.75em;
+			padding: 1em 0;
+		}
 
-	  .kg-image-full + figcaption {
-	    margin-bottom: 1.334em;
-	  }
+		.kg-image-full + figcaption {
+			margin-bottom: 1.334em;
+		}
 	}
 
 	.kg-gallery-card {
-	  margin: 0 0 2em;
-	  max-width: 60em !important;
-	  min-width: 100%;
-	  width: 75vw;
+		margin: 0 0 2em;
+		max-width: 60em !important;
+		min-width: 100%;
+		width: 75vw;
 
-	  figcaption {
-	    color: $color-gray-50;
-	    text-align: center;
-	    max-width: 40em;
-	    margin: auto;
-	  	font-size: 0.75em;
+		figcaption {
+			color: $color-gray-50;
+			text-align: center;
+			max-width: 40em;
+			margin: auto;
+			font-size: 0.75em;
 			padding: 1em 0;
-	  }
+		}
 	}
 
 	.kg-gallery-container {
-	  display: flex;
-	  flex-direction: column;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.kg-gallery-row {
-	  display: flex;
-	  flex-direction: row;
-	  justify-content: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 
 	.kg-gallery-image img {
-	  display: block;
-	  margin: 0;
-	  width: 100%;
-	  height: 100%;
+		display: block;
+		margin: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 	.kg-gallery-row:not(:first-of-type) {
-	  margin: 0.75em 0 0 0;
+		margin: 0.75em 0 0;
 	}
 
 	.kg-gallery-image:not(:first-of-type) {
-	  margin: 0 0 0 0.75em;
+		margin: 0 0 0 0.75em;
 	}
 
 	.kg-embed-card {
-	  margin: 0 0 2em;
+		margin: 0 0 2em;
 
-	  > * {
-	    margin-left: auto;
-	    margin-right: auto;
-	  }
+		> * {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.kg-bookmark-card {
+		width: 100%;
+		margin: 0 0 4rem;
+	}
+
+	.kg-bookmark-container {
+		display: flex;
+		text-decoration: none;
+		min-height: $gutter * 4;
+		background: $color-gray-90;
+		border: 0;
+		box-shadow: none !important;
+		overflow: hidden;
+		@media (max-width: $breakpoint-tablet) {
+			flex-direction: column;
+		}
+	}
+
+	.kg-bookmark-content {
+		text-rendering: optimizeLegibility;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		align-items: flex-start;
+		justify-content: start;
+		padding: $gutter;
+		color: $color-gray-50;
+		@media (max-width: $breakpoint-tablet) {
+			padding: $gutter / 2;
+			order: 2;
+		}
+	}
+
+	.kg-bookmark-title {
+		display: -webkit-box;
+		color: #000;
+		font-size: 0.9em;
+		font-weight: 700;
+		max-height: 4.44445em;
+		overflow-y: hidden;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+
+	.kg-bookmark-description {
+		display: -webkit-box;
+		font-size: 0.9em;
+		font-weight: 400;
+		margin-top: $gutter/4;
+		max-height: 4.44445em;
+		overflow-y: hidden;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+
+	.kg-bookmark-thumbnail {
+		position: relative;
+		min-width: 33%;
+		max-height: 100%;
+		@media (max-width: $breakpoint-tablet) {
+			order: 1;
+			width: 100%;
+			min-height: 160px;
+		}
+	}
+
+	.kg-bookmark-thumbnail img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.kg-bookmark-metadata {
+		text-rendering: optimizeLegibility;
+		display: flex;
+		align-items: center;
+		color: $color-gray-50;
+		font-size: 0.9em;
+		font-weight: 400;
+		margin-top: $gutter;
+		flex-wrap: wrap;
+		@media (max-width: $breakpoint-tablet) {
+			margin-top: $gutter / 2;
+		}
+	}
+
+	.kg-bookmark-icon {
+		width: $gutter/2;
+		margin: 0 $gutter/4 0 0;
+	}
+
+	.kg-bookmark-author:after {
+		content: "•";
+		margin: 0 $gutter/4;
+	}
+
+	.kg-bookmark-publisher {
+		color: $color-primary;
 	}
 }
-
 
 .avatar {
 	position: relative;
@@ -501,8 +589,8 @@ a {
 		height: auto;
 	}
 
-	&:before,
-	&:after {
+	&:after,
+	&:before {
 		content: '';
 		position: absolute;
 		z-index: 0;
@@ -521,15 +609,10 @@ a {
 		width: 100%;
 	}
 }
-
-
 /* ==========================================================================
    layout
    ========================================================================== */
-
-body {
-
-}
+body {}
 
 .inner {
 	margin: 0 auto;
@@ -539,24 +622,19 @@ body {
 
 .page-template .content,
 .post-template .content {
-
 	.inner {
 		margin: 0 auto;
 		max-width: 44em;
 		padding: 0 16em;
-
 		@media only screen and (max-width: $breakpoint-desktop) {
 			padding: 0 14em;
 		}
-
 		@media only screen and (max-width: $breakpoint-laptop) {
 			padding: 0 12em;
 		}
-
 		@media only screen and (max-width: $breakpoint-tablet) {
 			padding: 0 $gutter*1.5;
 		}
-
 		@media only screen and (max-width: $breakpoint-phone) {
 			padding: 0 $gutter/2;
 		}
@@ -569,20 +647,16 @@ body {
 	width: 100%;
 	min-height: 100vh;
 	padding-bottom: $gutter*9;
-
 	@media only screen and (max-width: $breakpoint-laptop) {
 		padding-bottom: $gutter*6;
 	}
-
 	@media only screen and (max-width: $breakpoint-tablet) {
 		padding-bottom: $gutter*3;
 	}
 }
-
 /* ==========================================================================
    Navigation
    ========================================================================== */
-
 #nav {
 	padding: $gutter 0;
 
@@ -594,7 +668,6 @@ body {
 }
 
 #menu {
-
 	&:after {
 		clear: both;
 		content: '';
@@ -606,7 +679,6 @@ body {
 		list-style: none;
 		padding: 0;
 		margin: 0;
-
 		@media only screen and (max-width: $breakpoint-tablet) {
 			float: none;
 		}
@@ -628,14 +700,10 @@ body {
 			a {
 				text-decoration: none;
 
-				&:hover,
-				&:focus {
+				&:focus,
+				&:hover {}
 
-				}
-
-				&.current {
-
-				}
+				&.current {}
 
 				i:before {
 					margin: 0;
@@ -646,16 +714,13 @@ body {
 
 	.menu-search {
 		float: right;
-
 		@media only screen and (max-width: $breakpoint-tablet) {
 			float: none;
 			margin-top: $gutter/4;
 		}
 
 		.menu-list-item {
-
 			&:last-child {
-
 				@media only screen and (max-width: $breakpoint-tablet) {
 					width: 100%;
 					clear: both;
@@ -667,7 +732,6 @@ body {
 
 		.search {
 			width: $gutter*4;
-
 			@media only screen and (max-width: $breakpoint-phone) {
 				width: 100%;
 			}
@@ -705,15 +769,11 @@ body {
 		}
 	}
 }
-
 /* ==========================================================================
    Search Results
    ========================================================================== */
-
 .searchresults {
-
 	.post-list {
-
 		.post {
 			width: auto;
 			float: none !important;
@@ -724,11 +784,9 @@ body {
 		}
 	}
 }
-
 /* ==========================================================================
    Header
    ========================================================================== */
-
 #header {
 	position: relative;
 }
@@ -756,13 +814,11 @@ body {
 }
 
 .header-logo {
-	margin: 0;
-	margin-right: $gutter/2;
+	margin: 0 $gutter/2 0 0;
 	display: block;
 	width: auto;
 	height: 4em;
 	float: left;
-
 	@media only screen and (max-width: $breakpoint-phone) {
 		float: none;
 		margin-bottom: $gutter/2;
@@ -790,7 +846,6 @@ body {
 	font-size: 4em;
 	line-height: 1em;
 	margin: 0;
-
 	@media only screen and (max-width: $breakpoint-phone) {
 		font-size: 3em;
 	}
@@ -839,7 +894,7 @@ body {
 	}
 
 	.header-posts:before {
-			content: '\e802';
+		content: '\e802';
 	}
 }
 
@@ -849,38 +904,32 @@ body {
 	height: $gutter*6;
 	background: no-repeat scroll center center / cover;
 	z-index: 1;
-
 	@media only screen and (max-width: $breakpoint-phone) {
 		height: 0;
 		padding-bottom: 50%;
 	}
 }
 
-
-
-
 .author-meta {
-
 	.author-location:before {
-			content: '\e805';
+		content: '\e805';
 	}
 
 	.author-website:before {
-			content: '\e804';
+		content: '\e804';
 	}
 
 	.author-twitter:before {
-			content: '\f099';
+		content: '\f099';
 	}
 
 	.author-facebook:before {
-			content: '\f09a';
+		content: '\f09a';
 	}
 
-	.author-website,
+	.author-facebook,
 	.author-twitter,
-	.author-facebook {
-
+	.author-website {
 		a {
 			width: 1.5em;
 			margin-left: -1.5em;
@@ -889,18 +938,15 @@ body {
 		}
 	}
 }
-
 /* ==========================================================================
    Footer
    ========================================================================== */
-
 #footer {
 	position: absolute;
 	width: 100%;
 	left: 0;
 	bottom: $gutter*4;
 	z-index: 20;
-
 	@media only screen and (max-width: $breakpoint-tablet) {
 		bottom: $gutter;
 	}
@@ -925,7 +971,6 @@ body {
 
 		.credits-theme {
 			float: left;
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				float: none;
 			}
@@ -933,18 +978,15 @@ body {
 
 		.credits-software {
 			float: right;
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				float: none;
 			}
 		}
 	}
 }
-
 /* ==========================================================================
    Post
    ========================================================================== */
-
 .post {
 	position: relative;
 
@@ -955,11 +997,9 @@ body {
 		&.has-cover {
 			color: white;
 			padding: $gutter*3 0 $gutter*5;
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				padding: $gutter*4 0 $gutter*1.5;
 			}
-
 			@media only screen and (max-width: $breakpoint-phone) {
 				padding: $gutter*3 0 $gutter/2;
 			}
@@ -977,7 +1017,6 @@ body {
 			line-height: 1em;
 			margin: $gutter 0;
 			hyphens: auto;
-
 			@media only screen and (max-width: $breakpoint-phone) {
 				font-size: 2.5em;
 			}
@@ -996,7 +1035,6 @@ body {
 				width: $gutter*2;
 				height: 0;
 				border-bottom: 4px solid $color-gray-80;
-
 				@media only screen and (max-width: $breakpoint-tablet) {
 					width: 100%;
 				}
@@ -1004,11 +1042,8 @@ body {
 		}
 
 		&.has-cover {
-
 			.post-title {
-
 				&:after {
-
 					@media only screen and (min-width: $breakpoint-phone) {
 						border-color: white;
 					}
@@ -1017,7 +1052,6 @@ body {
 		}
 
 		.post-meta {
-
 			a {
 				color: inherit;
 			}
@@ -1037,10 +1071,10 @@ body {
 				}
 			}
 
-			.post-meta-date,
-			.post-meta-tags,
 			.post-meta-author,
-			.post-meta-reading-time {
+			.post-meta-date,
+			.post-meta-reading-time,
+			.post-meta-tags {
 				position: relative;
 				padding-left: 1.6em;
 
@@ -1070,26 +1104,25 @@ body {
 			}
 
 			.post-meta-date:before {
-					content: '\e803';
+				content: '\e803';
 			}
 
 			.post-meta-tags:before {
-					content: '\e808';
+				content: '\e808';
 			}
 
 			.post-meta-reading-time:before {
-					content: '\e806';
+				content: '\e806';
 			}
 		}
 
 		&.has-cover {
-
 			.post-meta {
 				color: rgba(255,255,255,0.6);
 
-					a {
-						color: white;
-					}
+				a {
+					color: white;
+				}
 			}
 		}
 
@@ -1113,11 +1146,9 @@ body {
 				z-index: 10;
 				background: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
 				background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
-
 				@media only screen and (max-width: $breakpoint-tablet) {
 					border-width: $gutter/2;
 				}
-
 				@media only screen and (max-width: $breakpoint-phone) {
 					border-width: 0;
 				}
@@ -1134,7 +1165,6 @@ body {
 				background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
 				background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
 				display: none;
-
 				@media only screen and (max-width: $breakpoint-tablet) {
 					display: block;
 				}
@@ -1147,12 +1177,9 @@ body {
 		margin-bottom: $gutter*2;
 	}
 }
-
-
 /* ==========================================================================
    Index
    ========================================================================== */
-
 .post-list {
 	position: relative;
 
@@ -1167,12 +1194,10 @@ body {
 		padding-top: $gutter;
 		padding-bottom: $gutter;
 		box-sizing: border-box;
-
 		@media only screen and (max-width: $breakpoint-tablet) {
 			width: 100%;
 			border-bottom: 2px solid $color-gray-90;
 		}
-
 		@media only screen and (max-width: $breakpoint-phone) {
 			padding-top: $gutter/2;
 			padding-bottom: $gutter/2;
@@ -1182,11 +1207,9 @@ body {
 			float: left;
 			clear: left;
 			padding-right: $gutter;
-
 			@media only screen and (max-width: $breakpoint-laptop) {
 				padding-right: $gutter/2;
 			}
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				float: none;
 				padding-right: 0;
@@ -1197,11 +1220,9 @@ body {
 			float: right;
 			clear: right;
 			padding-left: $gutter;
-
 			@media only screen and (max-width: $breakpoint-laptop) {
 				padding-left: $gutter/2;
 			}
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				float: none;
 				padding-left: 0;
@@ -1215,7 +1236,6 @@ body {
 		}
 
 		&.post.featured {
-
 			&:before {
 				font-family: "icon";
 				content: '\e800';
@@ -1230,7 +1250,6 @@ body {
 				text-align: center;
 				color: rgba(255, 245, 0, 0.8);
 				z-index: -1;
-
 				@media only screen and (max-width: $breakpoint-phone) {
 					font-size: 8em;
 				}
@@ -1239,11 +1258,9 @@ body {
 
 		.post-image {
 			display: block;
-			margin: 0;
-			margin-bottom: $gutter/2;
+			margin: 0 0 $gutter/2;
 			padding-bottom: 56.25%;
 			background: no-repeat scroll center center / cover;
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				float: left;
 				width: $gutter*4;
@@ -1251,7 +1268,6 @@ body {
 				padding: 0;
 				margin-right: $gutter;
 			}
-
 			@media only screen and (max-width: $breakpoint-phone) {
 				width: $gutter*2.5;
 				height: $gutter*2.5;
@@ -1266,11 +1282,9 @@ body {
 			font-size: 2em;
 			line-height: 1.25em;
 			hyphens: auto;
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				font-size: 1.75em;
 			}
-
 			@media only screen and (max-width: $breakpoint-phone) {
 				font-size: 1.5em;
 			}
@@ -1284,7 +1298,6 @@ body {
 			display: block;
 			font-size: 0.9em;
 			color: $color-gray-50;
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				overflow: hidden;
 				text-overflow: ellipsis;
@@ -1300,7 +1313,6 @@ body {
 			position: relative;
 			margin-top: $gutter/4;
 			margin-bottom: 0;
-
 			@media only screen and (max-width: $breakpoint-phone) {
 				display: none;
 			}
@@ -1323,27 +1335,25 @@ body {
 				}
 
 				&:after {
-						content: '';
-						position: absolute;
-						right: $gutter/8;
-						top: 50%;
-						width: $gutter/4;
-						height: $gutter/4;
-						margin-top: -$gutter/8;
-						box-sizing: border-box;
-						border-top: 2px solid $color-primary;
-						border-right: 2px solid $color-primary;
-						transform: rotate(45deg);
+					content: '';
+					position: absolute;
+					right: $gutter/8;
+					top: 50%;
+					width: $gutter/4;
+					height: $gutter/4;
+					margin-top: -$gutter/8;
+					box-sizing: border-box;
+					border-top: 2px solid $color-primary;
+					border-right: 2px solid $color-primary;
+					transform: rotate(45deg);
 				}
 			}
 		}
 	}
 }
-
 /* ==========================================================================
    Post Share
    ========================================================================== */
-
 .post-author {
 	position: relative;
 	margin-top: -$gutter/2;
@@ -1378,7 +1388,6 @@ body {
 		border-radius: 100%;
 		float: left;
 		margin-right: $gutter;
-
 		@media only screen and (max-width: $breakpoint-phone) {
 			width: $gutter*2;
 			height: $gutter*2;
@@ -1389,7 +1398,6 @@ body {
 
 	.post-author-info {
 		padding-left: $gutter*4;
-
 		@media only screen and (max-width: $breakpoint-phone) {
 			padding-left: 0;
 		}
@@ -1458,32 +1466,54 @@ body {
 			padding-right: $gutter/2;
 
 			&:after {
-					content: '';
-					position: absolute;
-					right: $gutter/8;
-					top: 50%;
-					width: $gutter/4;
-					height: $gutter/4;
-					margin-top: -$gutter/8;
-					box-sizing: border-box;
-					border-top: 2px solid $color-primary;
-					border-right: 2px solid $color-primary;
-					transform: rotate(45deg);
+				content: '';
+				position: absolute;
+				right: $gutter/8;
+				top: 50%;
+				width: $gutter/4;
+				height: $gutter/4;
+				margin-top: -$gutter/8;
+				box-sizing: border-box;
+				border-top: 2px solid $color-primary;
+				border-right: 2px solid $color-primary;
+				transform: rotate(45deg);
 			}
 		}
 	}
 }
-
 /* ==========================================================================
    Post Share
    ========================================================================== */
+.post-share {
+	background: $color-gray-90;
+	line-height: $gutter;
+	overflow: hidden;
+	margin-top: -$gutter/2;
+	margin-bottom: $gutter;
 
-	.post-share {
-		background: $color-gray-90;
-		line-height: $gutter;
-		overflow: hidden;
-		margin-top: -$gutter/2;
-		margin-bottom: $gutter;
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+
+	.post-share-label {
+		position: relative;
+		display: block;
+		float: left;
+		padding: 0 $gutter/4;
+		color: $color-gray-70;
+		font-size: 0.75em;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	.post-share-list {
+		float: right;
+		list-style: none;
+		padding: 0;
+		margin: 0;
 
 		&:after {
 			clear: both;
@@ -1491,66 +1521,40 @@ body {
 			display: table;
 		}
 
-		.post-share-label {
-			position: relative;
-			display: block;
+		li {
 			float: left;
-			padding: 0 $gutter/4;
-			color: $color-gray-70;
-			font-size: 0.75em;
-			font-weight: 700;
-			text-transform: uppercase;
-			letter-spacing: 1px;
+			border-left: 2px solid white;
 		}
 
-		.post-share-list {
-			float: right;
-			list-style: none;
-			padding: 0;
-			margin: 0;
+		a {
+			display: block;
+			text-decoration: none;
+			width: $gutter;
+			text-align: center;
+			color: white;
 
-			&:after {
-				clear: both;
-				content: '';
-				display: table;
+			span {
+				display: none;
 			}
 
-			li {
-				float: left;
-				border-left: 2px solid white;
+			&.icon-twitter {
+				background: #3ea9dd;
 			}
 
-			a {
-				display: block;
-				text-decoration: none;
-				width: $gutter;
-				text-align: center;
-				color: white;
+			&.icon-facebook {
+				background: #3c5a98;
+			}
 
-				span {
-					display: none;
-				}
-
-				&.icon-twitter {
-					background: #3ea9dd;
-				}
-
-				&.icon-facebook {
-					background: #3c5a98;
-				}
-
-				&:hover,
-				&:focus {
-					background: black;
-				}
+			&:focus,
+			&:hover {
+				background: black;
 			}
 		}
 	}
-
+}
 /* ==========================================================================
    Comments
    ========================================================================== */
-
 .post-comments {
 	position: relative;
 	background: $color-gray-90;
@@ -1573,11 +1577,9 @@ body {
 		line-height: $gutter;
 	}
 }
-
 /* ==========================================================================
    Subscribe
    ========================================================================== */
-
 .post-subscribe {
 	position: relative;
 	text-align: center;
@@ -1586,7 +1588,6 @@ body {
 	box-sizing: border-box;
 	margin-top: -$gutter/2;
 	margin-bottom: $gutter;
-
 	@media only screen and (max-width: $breakpoint-phone) {
 		padding: $gutter;
 	}
@@ -1610,7 +1611,6 @@ body {
 		margin-top: -$gutter/2;
 		margin-bottom: $gutter/2;
 		color: $color-gray-50;
-
 		@media only screen and (max-width: $breakpoint-phone) {
 			margin-top: 0;
 		}
@@ -1619,7 +1619,6 @@ body {
 	.post-subscribe-form {
 		display: flex;
 		justify-content: center;
-
 		@media only screen and (max-width: $breakpoint-phone) {
 			margin-left: -$gutter/2;
 			margin-right: -$gutter/2;
@@ -1641,8 +1640,8 @@ body {
 			box-shadow: none;
 			box-sizing: border-box;
 
-			&:hover,
-			&:focus {
+			&:focus,
+			&:hover {
 				border-color: $color-gray-70;
 			}
 		}
@@ -1662,28 +1661,21 @@ body {
 			box-sizing: border-box;
 			cursor: pointer;
 
-			&:hover,
-			&:focus {
+			&:focus,
+			&:hover {
 				background: black;
 			}
 		}
 	}
 }
-
 /* ==========================================================================
    Post Nav
    ========================================================================== */
-
 .post-nav {
-
 	@media only screen and (max-width: $breakpoint-tablet) {
-		margin-top: -$gutter*0.75;
-		margin-bottom: $gutter;
-		margin-left: -$gutter/4;
-		margin-right: -$gutter/4;
+		margin: -$gutter*0.75 -$gutter/4 $gutter;
 		display: flex;
 	}
-
 	@media only screen and (max-width: $breakpoint-phone) {
 		display: block;
 	}
@@ -1704,11 +1696,9 @@ body {
 		text-align: center;
 		box-sizing: border-box;
 		transform-origin: 50% 0;
-
 		@media only screen and (max-width: $breakpoint-desktop) {
 			padding: $gutter/2 0;
 		}
-
 		@media only screen and (max-width: $breakpoint-tablet) {
 			position: relative;
 			top: auto;
@@ -1721,7 +1711,6 @@ body {
 			padding: $gutter/4;
 			text-align: left;
 		}
-
 		@media only screen and (max-width: $breakpoint-phone) {
 			width: auto !important;
 			float: none !important;
@@ -1737,14 +1726,12 @@ body {
 			border-right: $gutter/4 solid transparent;
 			border-bottom: $gutter/4 solid rgba(120,120,120,0.5);
 			transition: all ease-out 0.1s;
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				display: none;
 			}
 		}
 
 		&:hover {
-
 			&:before {
 				border-bottom-color: $color-primary;
 			}
@@ -1757,7 +1744,6 @@ body {
 			.post-nav-type {
 				left: -$gutter*2.5;
 				transform: rotate(-90deg);
-
 				@media only screen and (max-width: $breakpoint-phone) {
 					left: -$gutter*2.125;
 				}
@@ -1771,7 +1757,6 @@ body {
 			.post-nav-type {
 				right: -$gutter*2.5;
 				transform: rotate(90deg);
-
 				@media only screen and (max-width: $breakpoint-phone) {
 					right: -$gutter*2.125;
 				}
@@ -1783,7 +1768,6 @@ body {
 			display: block;
 			opacity: 0;
 			transition: opacity ease-out 0.2s;
-
 			@media only screen and (max-width: $breakpoint-tablet) {
 				background: $color-gray-90;
 				padding: $gutter/2;
@@ -1801,7 +1785,6 @@ body {
 				letter-spacing: 2px;
 				color: $color-gray-70;
 				transform-origin: 50% 0;
-
 				@media only screen and (max-width: $breakpoint-tablet) {
 					display: block;
 				}
@@ -1814,11 +1797,9 @@ body {
 				color: $color-gray-50;
 				transition: color ease-out 0.2s;
 				hyphens: auto;
-
 				@media only screen and (max-width: $breakpoint-laptop) {
 					font-size: 2em;
 				}
-
 				@media only screen and (max-width: $breakpoint-tablet) {
 					font-size: 1.5em;
 					margin-bottom: $gutter/2;
@@ -1831,7 +1812,6 @@ body {
 				margin: $gutter/4 0 0;
 				color: $color-gray-50;
 				display: none;
-
 				@media only screen and (max-width: $breakpoint-tablet) {
 					display: block;
 				}
@@ -1839,10 +1819,8 @@ body {
 		}
 
 		&:hover {
-
 			.post-nav-post {
 				opacity: 1 !important;
-
 				@media only screen and (max-width: $breakpoint-tablet) {
 					background: $color-primary;
 				}
@@ -1851,9 +1829,8 @@ body {
 					color: $color-primary;
 				}
 
-				.post-nav-title,
-				.post-nav-excerpt {
-
+				.post-nav-excerpt,
+				.post-nav-title {
 					@media only screen and (max-width: $breakpoint-tablet) {
 						color: white;
 					}
@@ -1862,11 +1839,9 @@ body {
 		}
 	}
 }
-
 /* ==========================================================================
    Pagination
    ========================================================================== */
-
 .pagination {
 	position: relative;
 	padding: $gutter $gutter/2;
@@ -1890,8 +1865,8 @@ body {
 		box-sizing: border-box;
 		z-index: 1;
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			background: $color-primary;
 			color: white;
 
