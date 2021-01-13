@@ -1,7 +1,7 @@
 {
   "name": "kava",
   "description": "Ghost Theme",
-  "demo": "https://kava.zutrinken.com",
+  "demo": "https://kava.peteramende.de",
   "version": "1.4.0",
   "engines": {
     "ghost": ">=3.0.0",
